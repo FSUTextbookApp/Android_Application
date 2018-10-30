@@ -38,12 +38,12 @@
         android:textAlignment="center" />
 
     <TextView
-        android:autoLink="web"
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="188dp"
-        android:text="https://github.com/FSUTextbookApp/hello-world" />
+        android:autoLink="web"
+        android:text="https://github.com/FSUTextbookApp/Android_Application" />
 </RelativeLayout>
