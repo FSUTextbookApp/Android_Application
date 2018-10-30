@@ -177,8 +177,24 @@ public class CreateAccount extends Activity {
 
     }
 
-    void clear() {
+    void clear()
+    {
+        FirstName.setText("");
+        FirstName.setError(null);
+        LastName.setText("");
+        LastName.setError(null);
+        Email.setText("");
+        Email.setError(null);
+        Password.setText("");
+        Password.setError(null);
+        VPassword.setText("");
+        VPassword.setError(null);
+        Phone.setText("");
+        Phone.setError(null);
+
+        Toast.makeText(CreateAccount.this, "Feilds Reset", Toast.LENGTH_LONG).show();
 
     }
 
 }
+

@@ -58,8 +58,8 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/firstName"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="260dp"
-        android:layout_marginBottom="280dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginBottom="350dp"
         android:ems="10"
         android:hint="Verify Password"
         android:inputType="textPassword" />
@@ -70,8 +70,9 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/firstName"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="320dp"
-        android:layout_marginBottom="350dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginBottom="290dp"
         android:ems="10"
         android:hint="Phone Number"
         android:inputType="phone" />
