@@ -11,7 +11,7 @@ public class ContactUs extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_contact_us);
     }
 
     public void yourMethodName(View v){
