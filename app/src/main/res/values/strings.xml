@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Textbook_Store_App</string>
+    <string name="title_activity_create_account">CreateAccount</string>
 </resources>
