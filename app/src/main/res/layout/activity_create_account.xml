@@ -77,6 +77,27 @@
         android:hint="Phone Number"
         android:inputType="phone" />
 
+
+    <TextView
+        android:id="@+id/accept_button"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/accept_btn"
+        android:layout_alignStart="@+id/firstName"
+        android:layout_weight="1"
+        android:paddingStart="20dp"
+        android:paddingLeft="20dp"
+        android:text="Accept Terms" />
+
+    <CheckBox
+        android:id="@+id/accept_btn"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/firstName"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="172dp"
+        android:layout_marginBottom="140dp" />
+
     <Button
         android:id="@+id/submit"
         android:layout_width="250dp"

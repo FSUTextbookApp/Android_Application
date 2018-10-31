@@ -1,15 +1,19 @@
 package com.thewaterboys.textbook_store_app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class CreateAccount extends Activity {
+
+    boolean formError = true;
 
     EditText FirstName;
     EditText LastName;
@@ -17,6 +21,8 @@ public class CreateAccount extends Activity {
     EditText Password;
     EditText VPassword;
     EditText Phone;
+
+    CheckBox Accept;
 
     Button Clear;
     Button Submit;
@@ -35,6 +41,8 @@ public class CreateAccount extends Activity {
         Password = findViewById(R.id.password);
         VPassword = findViewById(R.id.verifyPassword);
         Phone = findViewById(R.id.phone);
+
+        Accept = findViewById(R.id.accept_btn);
 
         Clear = findViewById(R.id.clear);
         Submit = findViewById(R.id.submit);
@@ -135,44 +143,78 @@ public class CreateAccount extends Activity {
     void checkData(){
         if(nameLength(FirstName))
         {
-            Toast toast = Toast.makeText(this, "First Name too short", Toast.LENGTH_SHORT);
-            toast.show();
+            FirstName.setError("Missing First Name");
+            formError = false;
         }
 
         if(nameLength(LastName))
         {
-            Toast toast = Toast.makeText(this, "Last Name too short", Toast.LENGTH_SHORT );
-            toast.show();
+           LastName.setError("Missing Last Name");
+            formError = false;
         }
 
-        if(isEmail(Email) == false){
-            Toast t = Toast.makeText(this, "Invalid email", Toast.LENGTH_SHORT);
-            t.show();
+        if(!isEmail(Email)){
+            Email.setError("Invalid Email");
+            formError = false;
         }
 
         if(passwordMatch()){
-            Toast toast = Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT);
-            toast.show();
+            Password.setError("Passwords don't match");
+            formError = false;
         }
 
-        if(passwordLength(Password) == false){
-            Toast toast = Toast.makeText(this, "Password too short", Toast.LENGTH_SHORT);
-            toast.show();
+        if(!passwordLength(Password)){
+            VPassword.setError("Passwords too short");
+            formError=false;
+
         }
 
-        if(passwordLength(VPassword) == false){
+        if(!passwordLength(VPassword)){
             Toast toast = Toast.makeText(this, "Password too short", Toast.LENGTH_SHORT);
             toast.show();
+            formError = false;
         }
 
         if(isPhone(Phone) == false){
-            Toast t = Toast.makeText(this, "Phone number invalid", Toast.LENGTH_SHORT);
+           Phone.setError("Phone number invalid");
+            formError = false;
+        }
+
+        if(!Accept.isChecked())
+        {
+            Toast t = Toast.makeText(this, "Please agree to terms", Toast.LENGTH_SHORT);
             t.show();
+            formError = false;
         }
 
         if(isTrue()){
             Toast t = Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT);
             t.show();
+    }
+
+        if(!formError)
+        {
+            Toast.makeText(this, "Error in form", Toast.LENGTH_LONG).show();
+        }
+
+
+        else
+        {
+            Intent myIntent = new Intent (CreateAccount.this, AccountCreated.class);
+
+            Bundle mybundle = new Bundle();
+
+            mybundle.putString("FirstNameOut", FirstName.getText().toString());
+            mybundle.putString("LastNameOut", LastName.getText().toString());
+            mybundle.putString("EmailOut", Email.getText().toString());
+            mybundle.putString("PasswordOut", Password.getText().toString());
+            mybundle.putString("VPasswordOut", VPassword.getText().toString());
+            mybundle.putString("PhoneOut", Phone.getText().toString());
+
+            myIntent.putExtras(mybundle);
+
+            startActivity(myIntent);
+
         }
 
     }
