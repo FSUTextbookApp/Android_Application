@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "61684013686",
+    "firebase_url": "https://androidapplication-6d7fb.firebaseio.com",
+    "project_id": "androidapplication-6d7fb",
+    "storage_bucket": "androidapplication-6d7fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:61684013686:android:b72114c54505a9b9",
+        "android_client_info": {
+          "package_name": "com.thewaterboys.textbook_store_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "61684013686-bdpeariii1aijgoeoralgi13i51t5i88.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXargSsoEkFT4ta7wgoplg5DOMS2Fqhjc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
