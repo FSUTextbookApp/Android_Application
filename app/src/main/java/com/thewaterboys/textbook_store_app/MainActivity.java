@@ -14,18 +14,20 @@ public class MainActivity extends AppCompatActivity {
     private Button btnViewDatabase;
 
     private DatabaseReference mDatabase;
-    mDatabase = FirebaseDatabase.getInstance().getReference();
 
     private void writeNewBook(String Title, String Author, String ISBN) {
         Books book = new Books(Title, Author, ISBN);
 
-        mDatabase.child("Books").child(userId).setValue(user);
+        mDatabase.child("Books").child(Title).setValue(book);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        writeNewBook("Harry Potter", "J.K. Rowling", "123456789");
 
 
 
