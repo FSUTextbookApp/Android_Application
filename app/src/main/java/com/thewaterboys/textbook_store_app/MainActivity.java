@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        Books newBook = new Books("Harry Potter", "JK", "123456789");
+        Books newBook = new Books("Machine Learning", "Sharanya", "123456789");
         db.collection("Books").add(newBook);
 
         Button SignUpBtn = (Button) findViewById(R.id.SignUp);
