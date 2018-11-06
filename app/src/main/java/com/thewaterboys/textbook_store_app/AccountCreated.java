@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class AccountCreated extends AppCompatActivity {
 
     @Override
@@ -26,6 +28,10 @@ public class AccountCreated extends AppCompatActivity {
         LastNameOut.setText(mybundle.getString("LastNameOut"));
         emailOut.setText(mybundle.getString("EmailOut"));
         phoneOut.setText(mybundle.getString("PhoneOut"));
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        Users newUser = new Users(mybundle.getString("FirstNameOut"), mybundle.getString("LastNameOut"), mybundle.getString("EmailOut"), mybundle.getString("PhoneOut"));
+        db.collection("Users").add(newUser);
 
     }
 }
