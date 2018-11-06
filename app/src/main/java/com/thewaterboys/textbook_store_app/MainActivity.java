@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-
         Books newBook = new Books("Harry Potter", "JK", "123456789");
         db.collection("Books").add(newBook);
 
