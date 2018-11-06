@@ -192,10 +192,12 @@ public class CreateAccount extends Activity {
             t.show();
     }
 
-        if(!formError)
+
+    //permanently set to true once any error trips, needs to be reset to false once error is corrected.
+        /*if(!formError)
         {
             Toast.makeText(this, "Error in form", Toast.LENGTH_LONG).show();
-        }
+        }*/
 
 
         else
@@ -234,7 +236,7 @@ public class CreateAccount extends Activity {
         Phone.setText("");
         Phone.setError(null);
 
-        Toast.makeText(CreateAccount.this, "Feilds Reset", Toast.LENGTH_LONG).show();
+        Toast.makeText(CreateAccount.this, "Fields Reset", Toast.LENGTH_LONG).show();
 
     }
 
