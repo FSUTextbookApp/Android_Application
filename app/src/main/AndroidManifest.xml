@@ -22,7 +22,7 @@
         <activity
             android:name=".CreateAccount"
             android:label="@string/title_activity_create_account" />
-        <activity android:name=".AccountCreated"></activity>
+        <activity android:name=".AccountCreated" />
     </application>
 
 </manifest>
