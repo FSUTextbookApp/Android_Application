@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/aliceblue">
 
     <TextView
         android:id="@+id/textView"
@@ -56,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="71dp"
         android:layout_marginStart="72dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,8 +75,11 @@
         android:text="Log In"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.411"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordSignIn" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordSignIn"
+        app:layout_constraintVertical_bias="1.0"
+        android:background="@color/slategrey"/>
 
     <Button
         android:id="@+id/SignUp"

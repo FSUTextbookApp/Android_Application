@@ -24,8 +24,6 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnViewDatabase;
 
-    private void updateUI(FirebaseUser user) {}
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +43,5 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
     }
 }
