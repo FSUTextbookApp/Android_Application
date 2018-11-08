@@ -5,4 +5,9 @@
     <color name="colorAccent">#FF4081</color>
     <color name="aliceblue">#FFFAF0</color>
     <color name="slategrey">#778899</color>
+    <color name="palegold">#C0B283</color>
+    <color name="overcast">#9099A2</color>
+    <color name="paper">#D5D5D5</color>
+    <color name="lavender">#6D7993</color>
+    <color name="dusty">#96858F</color>
 </resources>
