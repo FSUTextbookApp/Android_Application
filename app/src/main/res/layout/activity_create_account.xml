@@ -16,7 +16,7 @@
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="First Name"
-        android:inputType="textPersonName"
+        android:inputType="textCapWords|textPersonName"
         android:textStyle="bold" />
 
     <EditText
@@ -28,7 +28,7 @@
         android:layout_marginTop="80dp"
         android:ems="10"
         android:hint="Last Name"
-        android:inputType="textPersonName"
+        android:inputType="textCapWords|textPersonName"
         android:textStyle="bold" />
 
     <EditText
