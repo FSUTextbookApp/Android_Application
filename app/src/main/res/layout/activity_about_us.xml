@@ -7,7 +7,7 @@
     tools:context=".AboutUs">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/AboutUsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -19,31 +19,33 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/AboutUsParagraph"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="122dp"
-        android:text="Our team has developed a textbook marketplace for use by any individual with an active FSU email. Sellers are able to post listings with information on the book they are selling, along with their expected price, and buyers can search through these listings to find their required course texts at a discounted price point." />
+        android:text="Our team has developed this textbook marketplace for use by any individual with an active FSU email. Sellers are able to post listings with information on the book they are selling, along with their expected price, and buyers can search through these listings to find their required course texts at a discounted price point."
+        android:textAlignment="center" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/AboutUsToLearnMore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginBottom="228dp"
         android:text="To learn more about our project and follow its development, visit us at our Github page:"
         android:textAlignment="center" />
 
     <TextView
-        android:autoLink="web"
-        android:id="@+id/textView5"
+        android:id="@+id/AboutUsLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="188dp"
-        android:text="https://github.com/FSUTextbookApp/hello-world" />
+        android:autoLink="web"
+        android:text="https://github.com/FSUTextbookApp/Android_Application" />
+
 </RelativeLayout>
