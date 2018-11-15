@@ -31,15 +31,25 @@ public class MainActivity extends AppCompatActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        Books newBook = new Books("Machine Learning", "Sharanya", "123456789");
+        Books newBook = new Books("Machine Learning", "Sharanya", "123456789", "Computer Science");
         db.collection("Books").add(newBook);
 
         Button SignUpBtn = (Button) findViewById(R.id.SignUp);
+        Button btnBookCat = (Button) findViewById(R.id.btnBookCategory);
+
+
 
         SignUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, CreateAccount.class));
+
+            }
+        });
+        btnBookCat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, BookCategory.class));
 
             }
         });

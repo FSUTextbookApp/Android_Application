@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "61684013686-hh32dm9jh73jgrq51pjgpufn42fe4jvf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.thewaterboys.textbook_store_app",
+            "certificate_hash": "8198451c93e217fa80bb86b59c988ababe43bd80"
+          }
+        },
+        {
           "client_id": "61684013686-bdpeariii1aijgoeoralgi13i51t5i88.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "61684013686-bdpeariii1aijgoeoralgi13i51t5i88.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

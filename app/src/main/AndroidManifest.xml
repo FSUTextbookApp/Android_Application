@@ -23,6 +23,7 @@
             android:name=".CreateAccount"
             android:label="@string/title_activity_create_account" />
         <activity android:name=".AccountCreated" />
+        <activity android:name=".BookCategory"></activity>
     </application>
 
 </manifest>
