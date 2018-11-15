@@ -34,7 +34,7 @@
         android:textAlignment="center" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/passwordSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -67,12 +67,12 @@
         android:textStyle="bold" />
 
     <Button
-        android:onClick="yourMethodName"
         android:id="@+id/activity2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/button"
+        android:layout_alignParentEnd="true"
+        android:onClick="LearnMore"
         android:text="Learn More " />
 
 </RelativeLayout>
