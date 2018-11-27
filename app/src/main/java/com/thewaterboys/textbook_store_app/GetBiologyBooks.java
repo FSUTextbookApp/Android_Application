@@ -43,7 +43,7 @@ public class GetBiologyBooks extends AppCompatActivity {
         btnSearch.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View v) {
-                query = notebookRef.whereEqualTo("subject", "Computer Science");
+                query = notebookRef.whereEqualTo("subject", "Math");
                   FirestoreRecyclerOptions<Note> options = new FirestoreRecyclerOptions.Builder<Note>()
                           .setQuery(query, Note.class)
                           .build();
@@ -61,7 +61,7 @@ public class GetBiologyBooks extends AppCompatActivity {
 
     private void setUpRecyclerView() {
         //Query query = notebookRef.orderBy("priority", Query.Direction.DESCENDING);
-        query = notebookRef.whereEqualTo("subject", "Biology");
+        query = notebookRef.whereEqualTo("subject", "Math");
 
         FirestoreRecyclerOptions<Note> options = new FirestoreRecyclerOptions.Builder<Note>()
                 .setQuery(query, Note.class)
