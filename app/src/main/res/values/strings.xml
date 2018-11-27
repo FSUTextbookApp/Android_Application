@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">Seminole Books</string>
     <string name="title_activity_create_account">CreateAccount</string>
+    <string-array name="departments">
+        <item>All</item>
+        <item>Anthropology</item>
+        <item>Biology</item>
+        <item>Computer Science</item>
+        <item>Mathematics</item>
+        <item>Sociology</item>
+        <item>Medical</item>
+        <item>Chemistry</item>
+        <item>Computer Criminology</item>
+        <item>Creative Writing</item>
+        <item>English</item>
+        <item>Environmental studies</item>
+    </string-array>
 </resources>

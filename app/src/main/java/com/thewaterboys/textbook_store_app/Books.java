@@ -2,18 +2,24 @@ package com.thewaterboys.textbook_store_app;
 
 public class Books {
 
-    public String Title;
-    public String Author;
+    public String title;
+    public String author;
     public String ISBN;
+    public String subject;
+    public String description;
+    public String price;
 
     public Books() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
-    public Books(String Title, String Author, String ISBN) {
-        this.Title = Title;
-        this.Author = Author;
+    public Books(String title, String author, String ISBN, String subject, String description, String price) {
+        this.title = title;
+        this.author = author;
         this.ISBN = ISBN;
+        this.subject = subject;
+        this.description = description;
+        this.price = price;
     }
 
 }
