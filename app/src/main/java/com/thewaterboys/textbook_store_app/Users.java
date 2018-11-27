@@ -1,6 +1,7 @@
 package com.thewaterboys.textbook_store_app;
 
-public class Users {
+public class
+Users {
 
     public String FirstName;
     public String LastName;
