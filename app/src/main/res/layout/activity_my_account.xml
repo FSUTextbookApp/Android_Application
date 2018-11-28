@@ -24,17 +24,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="94dp"
+        android:layout_marginTop="223dp"
         android:text="Email Address"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/email"
-        android:layout_width="wrap_content"
+        android:id="@+id/email2"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView6"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="47dp"
+        android:layout_alignEnd="@+id/textView2"
         android:ems="10"
         android:inputType="none" />
 
@@ -42,7 +41,9 @@
         android:id="@+id/delAccBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="28dp"
         android:text="Delete Account" />
 
 </RelativeLayout>

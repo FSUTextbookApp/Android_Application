@@ -31,15 +31,30 @@ public class MyAccount extends AppCompatActivity {
             String name = user.getDisplayName();
             String email = user.getEmail();
 
-            /*// Check if user's email is verified
-            boolean emailVerified = user.isEmailVerified();*/
+            // Check if user's email is verified
+            boolean emailVerified = user.isEmailVerified();
 
-            // The user's ID, unique to the Firebase project. Do NOT use this value to
-            // authenticate with your backend server, if you have one. Use
-            // FirebaseUser.getIdToken() instead.
-            //String uid = user.getUid();
+            if(emailVerified) {
+                Toast t = Toast.makeText(this, "Email Verified!", Toast.LENGTH_SHORT);
+                t.show();
+            }
+            else {
+                Toast t = Toast.makeText(this, "Must verify your email!", Toast.LENGTH_SHORT);
+                t.show();
 
-            EditText Email = (EditText) findViewById(R.id.email);
+                user.sendEmailVerification()
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    Log.d(TAG, "Email sent.");
+                                }
+                            }
+                        });
+            }
+
+
+            EditText Email = (EditText) findViewById(R.id.email2);
             Email.setText(email);
 
             FirebaseAuth auth = FirebaseAuth.getInstance();
