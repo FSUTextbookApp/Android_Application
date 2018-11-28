@@ -35,7 +35,7 @@ public class CreateAccount extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
 
-        FirstName = findViewById(R.id.firstName);
+        FirstName = findViewById(R.id.email);
         LastName = findViewById(R.id.lastName);
         Email = findViewById(R.id.email);
         Password = findViewById(R.id.password);
