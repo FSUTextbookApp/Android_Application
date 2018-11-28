@@ -38,4 +38,11 @@
         android:ems="10"
         android:inputType="none" />
 
+    <Button
+        android:id="@+id/delAccBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Delete Account" />
+
 </RelativeLayout>
