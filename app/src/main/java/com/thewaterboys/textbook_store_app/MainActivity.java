@@ -84,6 +84,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, CreateAccount.class));
             }
         });
+
+        //This is a flexable button that should be deleted before presenting*****************************8888***
+        Button flexBtn =  findViewById(R.id.flexButton);
+        flexBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ChooseSubject.class));
+            }
+        });
     }
 
     public void updateUI(FirebaseUser usr) {
