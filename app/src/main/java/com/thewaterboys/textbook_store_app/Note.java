@@ -31,7 +31,19 @@ public class Note {
         return description;
     }
 
-//    public int getPriority() {
+    public String getISBN() {
+        return ISBN;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    //    public int getPriority() {
 //        return priority;
 //    }
 }
