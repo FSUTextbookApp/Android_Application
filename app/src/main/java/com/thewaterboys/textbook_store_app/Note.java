@@ -2,6 +2,9 @@ package com.thewaterboys.textbook_store_app;
 
 import android.print.PageRange;
 
+//MARCUS BARNES
+//PLEASE GET WITH MARCUS if you need to change this page
+
 public class Note {
     private String title;
     private String description;
