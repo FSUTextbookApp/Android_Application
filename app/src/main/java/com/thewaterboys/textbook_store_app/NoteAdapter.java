@@ -20,6 +20,9 @@ public class NoteAdapter extends FirestoreRecyclerAdapter<Note, NoteAdapter.Note
     protected void onBindViewHolder(@NonNull NoteHolder holder, int position, @NonNull Note model) {
         holder.textViewTitle.setText(model.getTitle());
         holder.textViewDescription.setText(model.getDescription());
+        holder.textViewPrice.setText(model.getPrice());
+        holder.textViewIsbn.setText(model.getISBN());
+        holder.textViewSellersEmail.setText(model.getSellersEmail());
 
         //holder.textViewPriority.setText(String.valueOf(model.getPriority()));
     }
@@ -35,13 +38,18 @@ public class NoteAdapter extends FirestoreRecyclerAdapter<Note, NoteAdapter.Note
     class NoteHolder extends RecyclerView.ViewHolder {
         TextView textViewTitle;
         TextView textViewDescription;
-        TextView textViewPriority;
+        TextView textViewPrice;
+        TextView textViewIsbn;
+        TextView textViewSellersEmail;
 
         public NoteHolder(View itemView) {
             super(itemView);
             textViewTitle = itemView.findViewById(R.id.text_view_title);
             textViewDescription = itemView.findViewById(R.id.text_view_description);
-            textViewPriority = itemView.findViewById(R.id.text_view_price);
+            textViewPrice = itemView.findViewById(R.id.text_view_price);
+            textViewIsbn = itemView.findViewById(R.id.text_view_isbn);
+            textViewSellersEmail = itemView.findViewById(R.id.text_view_text_view_sellerEmail);
+
         }
     }
 }

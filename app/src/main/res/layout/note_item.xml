@@ -43,11 +43,19 @@
         android:text="Description" />
 
         <TextView
-            android:id="@+id/text_view_text_view_sellerEmail"
+            android:id="@+id/text_view_isbn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_below="@id/text_view_description"
+            android:text="ISBN" />
+
+        <TextView
+            android:id="@+id/text_view_text_view_sellerEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/text_view_isbn"
             android:text="Seller's Email" />
     </RelativeLayout>
 
