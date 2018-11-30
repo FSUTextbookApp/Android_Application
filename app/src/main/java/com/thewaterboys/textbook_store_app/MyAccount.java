@@ -123,7 +123,7 @@ public class MyAccount extends AppCompatActivity {
 
         adapter = new NoteAdapter(options);
 
-        RecyclerView recyclerView = findViewById(R.id.recycler_view_my_books);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view_user_books);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);

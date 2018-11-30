@@ -47,7 +47,7 @@
         android:text="Delete Account" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view_my_books"
+        android:id="@+id/recycler_view_user_books"
         android:layout_width="359dp"
         android:layout_height="55dp"
         android:layout_alignParentStart="true"
