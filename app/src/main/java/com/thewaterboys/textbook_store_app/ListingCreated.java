@@ -24,7 +24,6 @@ public class ListingCreated extends AppCompatActivity {
         final EditText SubjectOut = findViewById(R.id.subject);
         final EditText EmailOut = findViewById(R.id.email);
 
-        
         Intent myIntent = getIntent();
 
         Bundle myBundle = myIntent.getExtras();
