@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateListingActivity">
+    tools:context=".CreateListing">
 
     <TextView
         android:id="@+id/textView12"
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="140dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Author" />
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/title"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="200dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="ISBN" />
@@ -56,4 +56,39 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="24dp"
         android:text="List Book" />
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/title"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="260dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Description" />
+
+    <EditText
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/title"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="290dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Price" />
+
+    <EditText
+        android:id="@+id/subject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="231dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Subject" />
+
 </RelativeLayout>
