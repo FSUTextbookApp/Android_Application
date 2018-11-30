@@ -78,6 +78,15 @@ public class MyAccount extends AppCompatActivity {
         }
 
         Button DeleteAccountButton = (Button) findViewById(R.id.delAccBtn);
+        Button createListingButton = (Button) findViewById(R.id.createListing);
+
+        createListingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent (MyAccount.this, CreateListingActivity.class);
+                startActivity(myIntent);
+            }
+        });
 
         DeleteAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override

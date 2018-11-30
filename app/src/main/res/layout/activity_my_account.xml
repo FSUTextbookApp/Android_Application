@@ -46,5 +46,14 @@
         android:layout_marginBottom="28dp"
         android:text="Delete Account" />
 
+    <Button
+        android:id="@+id/createListing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="126dp"
+        android:text="Create New Listing" />
+
 </RelativeLayout>
 
