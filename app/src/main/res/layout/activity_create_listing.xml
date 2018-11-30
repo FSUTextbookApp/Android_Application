@@ -35,7 +35,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+<<<<<<< HEAD
         android:layout_marginTop="132dp"
+=======
+        android:layout_marginTop="150dp"
+>>>>>>> parent of cf4e8c5... Merge branch 'master' of /Users/sammaloney/Desktop/Android_Application with conflicts.
         android:ems="10"
         android:hint="Author"
         android:inputType="textPersonName" />
@@ -44,9 +48,15 @@
         android:id="@+id/isbn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="357dp"
+=======
+        android:layout_alignStart="@+id/title"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="220dp"
+>>>>>>> parent of cf4e8c5... Merge branch 'master' of /Users/sammaloney/Desktop/Android_Application with conflicts.
         android:ems="10"
         android:hint="ISBN"
         android:inputType="number" />
@@ -59,6 +69,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="24dp"
         android:text="List Book" />
+<<<<<<< HEAD
 
     <EditText
         android:id="@+id/description"
@@ -103,4 +114,6 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName" />
+=======
+>>>>>>> parent of cf4e8c5... Merge branch 'master' of /Users/sammaloney/Desktop/Android_Application with conflicts.
 </RelativeLayout>

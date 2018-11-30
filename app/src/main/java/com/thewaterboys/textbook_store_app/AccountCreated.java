@@ -5,8 +5,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,8 +19,6 @@ public class AccountCreated extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private static final String TAG = "AccountCreated";
 
-    Button ListBook;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,13 +30,6 @@ public class AccountCreated extends AppCompatActivity {
         final EditText emailOut = findViewById(R.id.email);
         final EditText phoneOut = findViewById(R.id.phone);
 
-        ListBook.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                list_book();
-            }
-        });
-
         Intent myIntent = getIntent();
 
         Bundle mybundle = myIntent.getExtras();
@@ -51,10 +40,5 @@ public class AccountCreated extends AppCompatActivity {
             emailOut.setText(mybundle.getString("EmailOut"));
             phoneOut.setText(mybundle.getString("PhoneOut"));
         }
-    }
-
-    void list_book(){
-        Intent myIntent = new Intent (AccountCreated.this, CreateListing.class);
-        startActivity(myIntent);
     }
 }

@@ -43,6 +43,36 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final EditText EmailIn = findViewById(R.id.emailSignIn);
                 final EditText PasswordIn = findViewById(R.id.passwordSignIn);
+<<<<<<< HEAD
+=======
+
+                String email = EmailIn.getText().toString();
+                String password = PasswordIn.getText().toString();
+
+                System.out.println(email);
+                System.out.println(password);
+
+                mAuth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    Log.d(TAG, "signInWithEmail:success");
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    Toast.makeText(MainActivity.this, "Authentication Success.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(MainActivity.this, "Welcome back " + user.getEmail() + "!", Toast.LENGTH_SHORT).show();
+
+                                    updateUI(user);
+                                } else {
+                                    // If sign in fails, display a message to the user.
+                                    Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                    Toast.makeText(MainActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+            }
+        });
+>>>>>>> parent of cf4e8c5... Merge branch 'master' of /Users/sammaloney/Desktop/Android_Application with conflicts.
 
                 String email = EmailIn.getText().toString();
                 String password = PasswordIn.getText().toString();
@@ -82,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, CreateAccount.class));
+<<<<<<< HEAD
             }
         });
 
@@ -91,10 +122,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, ChooseSubject.class));
+=======
+>>>>>>> parent of cf4e8c5... Merge branch 'master' of /Users/sammaloney/Desktop/Android_Application with conflicts.
             }
         });
     }
 
+<<<<<<< HEAD
     public void updateUI(FirebaseUser usr, final Books b) {
         Intent intent = new Intent(MainActivity.this, MyAccount.class);
 
@@ -109,6 +143,10 @@ public class MainActivity extends AppCompatActivity {
 
         intent.putExtras(mybundle);
 
+=======
+    public void updateUI(FirebaseUser usr) {
+        Intent intent = new Intent(MainActivity.this, MyAccount.class);
+>>>>>>> parent of cf4e8c5... Merge branch 'master' of /Users/sammaloney/Desktop/Android_Application with conflicts.
         startActivity(intent);
     }
 }

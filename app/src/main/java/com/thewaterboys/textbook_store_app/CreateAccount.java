@@ -154,7 +154,7 @@ public class CreateAccount extends Activity {
     }
 
     void checkData(){
-       if(nameLength(FirstName))
+        if(nameLength(FirstName))
         {
             FirstName.setError("Missing First Name");
             formError = false;
@@ -210,7 +210,7 @@ public class CreateAccount extends Activity {
         /*if(!formError)
         {
             Toast.makeText(this, "Error in form", Toast.LENGTH_LONG).show();
-        }  */
+        }*/
 
 
         else

@@ -22,9 +22,13 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:layout_marginEnd="49dp"
+<<<<<<< HEAD
         android:layout_marginTop="176dp"
+=======
+        android:layout_marginTop="174dp"
+>>>>>>> parent of cf4e8c5... Merge branch 'master' of /Users/sammaloney/Desktop/Android_Application with conflicts.
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="none" />
 
     <TextView
         android:id="@+id/textView7"
@@ -41,8 +45,12 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView7"
         android:layout_alignStart="@+id/firstName"
+<<<<<<< HEAD
+=======
+        android:editable="false"
+>>>>>>> parent of cf4e8c5... Merge branch 'master' of /Users/sammaloney/Desktop/Android_Application with conflicts.
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="none" />
 
     <TextView
         android:id="@+id/textView8"
@@ -60,8 +68,12 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView8"
         android:layout_alignStart="@+id/firstName"
+<<<<<<< HEAD
+=======
+        android:editable="false"
+>>>>>>> parent of cf4e8c5... Merge branch 'master' of /Users/sammaloney/Desktop/Android_Application with conflicts.
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="none" />
 
     <TextView
         android:id="@+id/textView9"
@@ -79,8 +91,12 @@
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/firstName"
         android:layout_marginBottom="95dp"
+<<<<<<< HEAD
+=======
+        android:editable="false"
+>>>>>>> parent of cf4e8c5... Merge branch 'master' of /Users/sammaloney/Desktop/Android_Application with conflicts.
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="none" />
 
     <TextView
         android:id="@+id/textView10"

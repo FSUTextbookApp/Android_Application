@@ -26,10 +26,14 @@
             android:label="@string/title_activity_create_account" />
         <activity android:name=".AccountCreated" />
         <activity android:name=".GetBiologyBooks" />
+<<<<<<< HEAD
         <activity android:name=".MyAccount" />
         <activity android:name=".ChooseSubject"/>
             <activity android:name=".CreateListingActivity">
         </activity>
+=======
+        <activity android:name=".MyAccount"></activity>
+>>>>>>> parent of cf4e8c5... Merge branch 'master' of /Users/sammaloney/Desktop/Android_Application with conflicts.
     </application>
 
 </manifest>
