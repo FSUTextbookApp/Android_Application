@@ -54,5 +54,14 @@
         android:layout_alignTop="@+id/delAccBtn"
         android:text="Create New Listing" />
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_user_books"
+        android:layout_width="357dp"
+        android:layout_height="294dp"
+        android:layout_alignEnd="@+id/delAccBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-216dp"
+        android:layout_marginBottom="99dp" />
+
 </RelativeLayout>
 
