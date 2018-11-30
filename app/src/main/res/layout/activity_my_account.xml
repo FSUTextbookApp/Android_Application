@@ -48,12 +48,12 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view_my_books"
-        android:layout_width="381dp"
-        android:layout_height="249dp"
+        android:layout_width="359dp"
+        android:layout_height="55dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="120dp" />
+        android:layout_marginBottom="315dp" />
 
 </RelativeLayout>
 
