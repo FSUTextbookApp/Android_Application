@@ -20,6 +20,7 @@ public class CreateListing extends AppCompatActivity {
     EditText Descript;
     EditText Price;
     EditText Subject;
+    EditText Email;
 
     Button ListBook;
 
@@ -37,6 +38,7 @@ public class CreateListing extends AppCompatActivity {
         Descript = findViewById(R.id.description);
         Price = findViewById(R.id.price);
         Subject = findViewById(R.id.subject);
+        Email = findViewById(R.id.email);
 
        ListBook.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -64,6 +66,7 @@ public class CreateListing extends AppCompatActivity {
         mybundle.putString("DescriptOut", Descript.getText().toString());
         mybundle.putString("PriceOut", Price.getText().toString());
         mybundle.putString("SubjectOut", Subject.getText().toString());
+        mybundle.putString("EmailOut", Email.getText().toString());
 
         myIntent.putExtras(mybundle);
 
