@@ -125,7 +125,7 @@ public class MyAccount extends AppCompatActivity {
 
     private void setUpRecyclerView() {
         //Query query = notebookRef.orderBy("priority", Query.Direction.DESCENDING);
-        query = BookRef.whereEqualTo("sellersEmail", email);
+        query = BookRef.whereEqualTo("sellersEmail", email).orderBy("title");
 
         FirestoreRecyclerOptions<Note> options = new FirestoreRecyclerOptions.Builder<Note>()
                 .setQuery(query, Note.class)
@@ -139,7 +139,7 @@ public class MyAccount extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
-                ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+                ItemTouchHelper.LEFT |ItemTouchHelper.RIGHT) {
             @Override
             public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
                 return false;
@@ -148,6 +148,8 @@ public class MyAccount extends AppCompatActivity {
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
                 adapter.deleteItem(viewHolder.getAdapterPosition());
+                Toast.makeText(MyAccount.this, "Posting removed", Toast.LENGTH_SHORT).show();
+
             }
         }).attachToRecyclerView(recyclerView);
     }
