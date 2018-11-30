@@ -27,6 +27,7 @@
         <activity android:name=".AccountCreated" />
         <activity android:name=".GetBiologyBooks" />
 <<<<<<< HEAD
+<<<<<<< HEAD
         <activity android:name=".MyAccount" />
         <activity android:name=".ChooseSubject"/>
             <activity android:name=".CreateListingActivity">
@@ -34,6 +35,10 @@
 =======
         <activity android:name=".MyAccount"></activity>
 >>>>>>> parent of cf4e8c5... Merge branch 'master' of /Users/sammaloney/Desktop/Android_Application with conflicts.
+=======
+        <activity android:name=".CreateListing" />
+        <activity android:name=".ListingCreated"></activity>
+>>>>>>> parent of 42cb16e... Merge remote-tracking branch 'origin/master'
     </application>
 
 </manifest>

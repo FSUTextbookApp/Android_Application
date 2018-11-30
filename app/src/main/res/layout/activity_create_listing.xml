@@ -4,19 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateListingActivity">
+    tools:context=".CreateListing">
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="333dp"
+        android:layout_width="179dp"
         android:layout_height="39dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="14dp"
-        android:textAlignment="center"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        tools:text="Fill out form below to list book" />
+        android:layout_marginTop="20dp"
+        tools:text="Fill out form beloe to list book" />
 
     <EditText
         android:id="@+id/title"
@@ -24,10 +21,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="80dp"
         android:ems="10"
-        android:hint="Title"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:text="Title" />
 
     <EditText
         android:id="@+id/author"
@@ -36,18 +33,23 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
 <<<<<<< HEAD
+<<<<<<< HEAD
         android:layout_marginTop="132dp"
 =======
         android:layout_marginTop="150dp"
 >>>>>>> parent of cf4e8c5... Merge branch 'master' of /Users/sammaloney/Desktop/Android_Application with conflicts.
+=======
+        android:layout_marginTop="140dp"
+>>>>>>> parent of 42cb16e... Merge remote-tracking branch 'origin/master'
         android:ems="10"
-        android:hint="Author"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:text="Author" />
 
     <EditText
         android:id="@+id/isbn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
 <<<<<<< HEAD
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
@@ -57,9 +59,14 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="220dp"
 >>>>>>> parent of cf4e8c5... Merge branch 'master' of /Users/sammaloney/Desktop/Android_Application with conflicts.
+=======
+        android:layout_alignStart="@+id/title"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="200dp"
+>>>>>>> parent of 42cb16e... Merge remote-tracking branch 'origin/master'
         android:ems="10"
-        android:hint="ISBN"
-        android:inputType="number" />
+        android:inputType="textPersonName"
+        android:text="ISBN" />
 
     <Button
         android:id="@+id/listBook"
@@ -75,32 +82,45 @@
         android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="282dp"
+=======
+        android:layout_alignStart="@+id/title"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="260dp"
+>>>>>>> parent of 42cb16e... Merge remote-tracking branch 'origin/master'
         android:ems="10"
-        android:hint="Description"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:text="Description" />
 
     <EditText
         android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/title"
         android:layout_alignParentBottom="true"
+<<<<<<< HEAD
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="214dp"
+=======
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="290dp"
+>>>>>>> parent of 42cb16e... Merge remote-tracking branch 'origin/master'
         android:ems="10"
-        android:hint="Price"
-        android:inputType="textPersonName|number|numberDecimal" />
+        android:inputType="textPersonName"
+        android:text="Price" />
 
     <EditText
         android:id="@+id/subject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="196dp"
+        android:layout_marginBottom="231dp"
         android:ems="10"
+<<<<<<< HEAD
         android:hint="Subject"
         android:inputType="textPersonName" />
 
@@ -116,4 +136,9 @@
         android:inputType="textPersonName" />
 =======
 >>>>>>> parent of cf4e8c5... Merge branch 'master' of /Users/sammaloney/Desktop/Android_Application with conflicts.
+=======
+        android:inputType="textPersonName"
+        android:text="Subject" />
+
+>>>>>>> parent of 42cb16e... Merge remote-tracking branch 'origin/master'
 </RelativeLayout>
