@@ -26,8 +26,10 @@
             android:label="@string/title_activity_create_account" />
         <activity android:name=".AccountCreated" />
         <activity android:name=".GetBiologyBooks" />
-        <activity android:name=".CreateListing" />
-        <activity android:name=".ListingCreated"></activity>
+        <activity android:name=".MyAccount" />
+        <activity android:name=".ChooseSubject"/>
+            <activity android:name=".CreateListingActivity">
+        </activity>
     </application>
 
 </manifest>
