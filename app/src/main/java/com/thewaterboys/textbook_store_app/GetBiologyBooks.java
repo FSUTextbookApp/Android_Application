@@ -1,10 +1,13 @@
 package com.thewaterboys.textbook_store_app;
 
 import android.content.Intent;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -20,6 +23,9 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 
 public class GetBiologyBooks extends AppCompatActivity {
+
+    private DrawerLayout mDrawerLayout;
+
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference notebookRef = db.collection("Books");
     //public Spinner spinner = findViewById(R.id.deptSpinner);
@@ -52,6 +58,28 @@ public class GetBiologyBooks extends AppCompatActivity {
 
 
         setUpRecyclerView(subject);
+
+        mDrawerLayout = findViewById(R.id.drawer_layout);
+
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        // set item as selected to persist highlight
+                        menuItem.setChecked(true);
+                        // close drawer when item is tapped
+                        mDrawerLayout.closeDrawers();
+
+                        // Add code here to update the UI based on the item selected
+                        // For example, swap UI fragments here
+
+                        Intent intent = new Intent(GetBiologyBooks.this, MainActivity.class);
+                        startActivity(intent);
+
+                        return true;
+                    }
+                });
     }
 
     private void setUpRecyclerView(String subject) {
