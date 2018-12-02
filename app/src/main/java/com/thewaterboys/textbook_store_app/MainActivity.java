@@ -50,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println(email);
                 System.out.println(password);
 
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+                final Books newBook = new Books("Machine Learning- Math", "Sharanya", "123456789", "Sociology", "this is a short description of the book this is a short description of the book this is a short description", "98", "email@fsu.edu");
+                db.collection("Books").add(newBook);
+
                 mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
@@ -60,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                                     Toast.makeText(MainActivity.this, "Authentication Success.", Toast.LENGTH_SHORT).show();
                                     Toast.makeText(MainActivity.this, "Welcome back " + user.getEmail() + "!", Toast.LENGTH_SHORT).show();
 
-                                    updateUI(user);
+                                    updateUI(user, newBook);
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w(TAG, "signInWithEmail:failure", task.getException());
@@ -70,11 +75,6 @@ public class MainActivity extends AppCompatActivity {
                         });
             }
         });
-
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        Books newBook = new Books("Machine Learning", "Sharanya", "123456789", "Biology", "this is a short description of the book", "98");
-        db.collection("Books").add(newBook);
 
         Button SignUpBtn = (Button) findViewById(R.id.SignUp);
 
@@ -90,13 +90,25 @@ public class MainActivity extends AppCompatActivity {
         flexBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ChooseSubject.class));
+                startActivity(new Intent(MainActivity.this, CreateListingActivity.class));
             }
         });
     }
 
-    public void updateUI(FirebaseUser usr) {
+    public void updateUI(FirebaseUser usr, final Books b) {
         Intent intent = new Intent(MainActivity.this, MyAccount.class);
+
+        Bundle mybundle = new Bundle();
+
+        //mybundle.putString("sellerEmail", b.sellersEmail);
+        mybundle.putString("bookTitle", b.title);
+        mybundle.putString("bookAuthor", b.author);
+        mybundle.putString("bookISBN", b.ISBN);
+        mybundle.putString("bookPrice", b.price);
+        mybundle.putString("bookSubject", b.subject);
+
+        intent.putExtras(mybundle);
+
         startActivity(intent);
     }
 }

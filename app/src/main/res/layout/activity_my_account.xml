@@ -42,8 +42,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="28dp"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_marginBottom="18dp"
         android:text="Delete Account" />
 
+    <Button
+        android:id="@+id/createListing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_alignTop="@+id/delAccBtn"
+        android:text="Create New Listing" />
+
 </RelativeLayout>
+

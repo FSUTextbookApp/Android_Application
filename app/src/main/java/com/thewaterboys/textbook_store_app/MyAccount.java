@@ -57,20 +57,36 @@ public class MyAccount extends AppCompatActivity {
             EditText Email = (EditText) findViewById(R.id.email2);
             Email.setText(email);
 
-            FirebaseAuth auth = FirebaseAuth.getInstance();
+            Intent myIntent = getIntent();
 
-            user.sendEmailVerification()
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                Log.d(TAG, "Email sent.");
-                            }
-                        }
-                    });
+            Bundle mybundle = myIntent.getExtras();
+
+            String bookPostingEmail = mybundle.getString("sellerEmail");
+            String bookTitle = mybundle.getString("bookTitle");
+
+            System.out.println(user.getEmail());
+            System.out.println(bookPostingEmail);
+
+            if(user.getEmail().equals(bookPostingEmail)) {
+                Toast t = Toast.makeText(this, bookTitle, Toast.LENGTH_SHORT);
+                t.show();
+            }
+
+            /*System.out.println("TEST TEST TEST");
+            System.out.println("EMAIL IS: ");
+            System.out.println(bookPostingEmail);*/
         }
 
         Button DeleteAccountButton = (Button) findViewById(R.id.delAccBtn);
+        Button createListingButton = (Button) findViewById(R.id.createListing);
+
+        createListingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent (MyAccount.this, CreateListingActivity.class);
+                startActivity(myIntent);
+            }
+        });
 
         DeleteAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
