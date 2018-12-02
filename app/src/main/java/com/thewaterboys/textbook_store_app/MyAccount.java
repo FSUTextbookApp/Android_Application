@@ -145,7 +145,7 @@ public class MyAccount extends AppCompatActivity {
 
                         Intent intent = new Intent(MyAccount.this, MainActivity.class);
                         startActivity(intent);
-                        
+
                         return true;
                     }
                 });
