@@ -164,7 +164,7 @@ public class MyAccount extends AppCompatActivity {
 
     private void setUpRecyclerView() {
         //Query query = notebookRef.orderBy("priority", Query.Direction.DESCENDING);
-        query = BookRef.whereEqualTo("sellersEmail", email);
+        query = BookRef.whereEqualTo("sellerEmail", email);
 
         FirestoreRecyclerOptions<Note> options = new FirestoreRecyclerOptions.Builder<Note>()
                 .setQuery(query, Note.class)
