@@ -12,26 +12,26 @@ public class Note {
     private String ISBN;
     private String subject;
     private String price;
-    private String sellersEmail;
+    private String sellerEmail;
 
 
     public Note() {
         //empty constructor needed
     }
 
-    public Note(String title, String description, String ISBN, String subject, String price, String sellersEmail) { //took out int priority
+    public Note(String title, String description, String ISBN, String subject, String price, String sellerEmail) { //took out int priority
         this.title = title;
         this.description = description;
         //this.priority = priority;
         this.ISBN = ISBN;
         this.subject = subject;
         this.price = price;
-        this.sellersEmail = sellersEmail;
+        this.sellerEmail = sellerEmail;
 
     }
 
-    public String getSellersEmail() {
-        return sellersEmail;
+    public String getSellerEmail() {
+        return sellerEmail;
     }
 
     public String getTitle()
