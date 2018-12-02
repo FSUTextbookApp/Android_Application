@@ -7,8 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -19,12 +21,17 @@ public class CreateListingActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_listing);
 
         Button postListingBtn = (Button) findViewById(R.id.listBook);
+        final Spinner spinner = findViewById(R.id.spinner_subject_CreListing);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.departments,R.layout.support_simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
 
         postListingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,14 +41,17 @@ public class CreateListingActivity extends AppCompatActivity {
                 final EditText bookISBN = findViewById(R.id.isbn);
                 final EditText bookDescription = findViewById(R.id.description);
                 final EditText bookPrice = findViewById(R.id.price);
-                final EditText bookSubject = findViewById(R.id.subject);
+
+
+
+                String spinnerText = spinner.getSelectedItem().toString();
 
                 String title = bookTitle.getText().toString();
                 String author = bookAuthor.getText().toString();
                 String isbn = bookISBN.getText().toString();
                 String description = bookDescription.getText().toString();
                 String price = bookPrice.getText().toString();
-                String subject = bookSubject.getText().toString();
+                String subject = spinnerText;
 
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
