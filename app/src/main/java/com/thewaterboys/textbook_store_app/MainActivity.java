@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         flexBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, CreateListingActivity.class));
+                startActivity(new Intent(MainActivity.this, ChooseSubject.class));
             }
         });
     }
