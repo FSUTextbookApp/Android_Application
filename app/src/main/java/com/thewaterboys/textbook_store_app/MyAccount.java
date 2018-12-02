@@ -121,6 +121,9 @@ public class MyAccount extends AppCompatActivity {
                                 }
                             }
                         });
+
+                Intent myIntent = new Intent (MyAccount.this, MainActivity.class);
+                startActivity(myIntent);
             }
         });
 
@@ -143,7 +146,7 @@ public class MyAccount extends AppCompatActivity {
                         // Add code here to update the UI based on the item selected
                         // For example, swap UI fragments here
 
-                        Intent intent = new Intent(MyAccount.this, MainActivity.class);
+                        Intent intent = new Intent(MyAccount.this, AboutUs.class);
                         startActivity(intent);
 
                         return true;

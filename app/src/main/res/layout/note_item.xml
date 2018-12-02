@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+    <!--//MARCUS BARNES-->
+    <!--//PLEASE GET WITH MARCUS if you need to change this page-->
+
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -18,20 +22,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_toStartOf="@id/text_view_priority"
+            android:layout_toStartOf="@id/text_view_price"
             android:ellipsize="end"
             android:maxLines="1"
             android:text="Title"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <TextView
-            android:id="@+id/text_view_priority"
+            android:id="@+id/text_view_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
             android:text="1"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/textview3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/text_view_price"
+            android:layout_alignParentTop="true"
+            android:text="$"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+
 
         <TextView
             android:id="@+id/text_view_description"
@@ -41,6 +56,36 @@
             android:layout_below="@id/text_view_title"
             android:text="Description" />
 
+        <TextView
+            android:id="@+id/textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_view_description"
+            android:layout_alignParentStart="true"
+            android:text="ISBN:   " />
+
+        <TextView
+            android:id="@+id/text_view_isbn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/textview1"
+            android:layout_below="@id/text_view_description"
+            android:text="ISBN of book" />
+
+        <TextView
+            android:id="@+id/textview2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview1"
+            android:text="Sellers Email:    " />
+
+        <TextView
+            android:id="@+id/text_view_text_view_sellerEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/textview2"
+            android:layout_below="@id/textview1"
+            android:text="Seller's Email" />
     </RelativeLayout>
 
 </android.support.v7.widget.CardView>
