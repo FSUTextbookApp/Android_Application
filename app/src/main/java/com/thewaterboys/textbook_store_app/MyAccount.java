@@ -146,8 +146,15 @@ public class MyAccount extends AppCompatActivity {
                         // Add code here to update the UI based on the item selected
                         // For example, swap UI fragments here
 
-                        Intent intent = new Intent(MyAccount.this, AboutUs.class);
-                        startActivity(intent);
+                        if(menuItem.getTitle().equals("Home Page")) {
+                            Intent intent = new Intent(MyAccount.this, MainActivity.class);
+                            startActivity(intent);
+                        }
+
+                        if(menuItem.getTitle().equals("About Us")) {
+                            Intent intent = new Intent(MyAccount.this, AboutUs.class);
+                            startActivity(intent);
+                        }
 
                         return true;
                     }
