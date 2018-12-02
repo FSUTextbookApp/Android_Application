@@ -84,7 +84,10 @@ public class GetBiologyBooks extends AppCompatActivity {
 
     private void setUpRecyclerView(String subject) {
         //Query query = notebookRef.orderBy("priority", Query.Direction.DESCENDING);
-        query = notebookRef.whereEqualTo("subject", subject);
+        if (subject.equals("All"))
+            query = notebookRef.orderBy("title");
+        else
+            query = notebookRef.whereEqualTo("subject", subject);
 
         FirestoreRecyclerOptions<Note> options = new FirestoreRecyclerOptions.Builder<Note>()
                 .setQuery(query, Note.class)
