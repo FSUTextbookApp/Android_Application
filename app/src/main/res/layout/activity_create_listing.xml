@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".CreateListingActivity">
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="333dp"
-        android:layout_height="39dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="14dp"
-        android:textAlignment="center"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        tools:text="Fill out form below to list book" />
-
     <EditText
         android:id="@+id/title"
         android:layout_width="wrap_content"
@@ -92,4 +80,18 @@
         android:ems="10"
         android:hint="Subject"
         android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="288dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="none"
+        android:text="Fill out form below to list a new book"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:focusable="false"/>
 </RelativeLayout>
