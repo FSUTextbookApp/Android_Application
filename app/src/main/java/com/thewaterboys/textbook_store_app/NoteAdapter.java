@@ -24,7 +24,7 @@ public class NoteAdapter extends FirestoreRecyclerAdapter<Note, NoteAdapter.Note
         holder.textViewDescription.setText(model.getDescription());
         holder.textViewPrice.setText(model.getPrice());
         holder.textViewIsbn.setText(model.getISBN());
-        holder.textViewSellersEmail.setText(model.getSellersEmail());
+        holder.textViewSellersEmail.setText(model.getSellerEmail());
 
         //holder.textViewPriority.setText(String.valueOf(model.getPriority()));
     }
