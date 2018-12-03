@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //This is a flexable button that should be deleted before presenting*****************************8888***
-        Button flexBtn =  findViewById(R.id.flexButton);
+       Button flexBtn =  findViewById(R.id.flexButton);
         flexBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

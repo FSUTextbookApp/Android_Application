@@ -20,8 +20,6 @@ import com.google.firebase.firestore.Query;
 
 public class SearchResults extends AppCompatActivity {
 
-    private DrawerLayout mDrawerLayout;
-
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference notebookRef = db.collection("Books");
 
@@ -60,55 +58,36 @@ public class SearchResults extends AppCompatActivity {
 
         setUpRecyclerView(searchResult);
 
-        mDrawerLayout = findViewById(R.id.drawer_layout);
-
-
-       /* NavigationView navigationView = findViewById(R.id.nav_view);
-
-        navigationView.setNavigationItemSelectedListener(
-                new NavigationView.OnNavigationItemSelectedListener()
-                {
-                    @Override
-                    public boolean onNavigationItemSelected(MenuItem menuItem) {
-                        // set item as selected to persist highlight
-                        menuItem.setChecked(true);
-                        // close drawer when item is tapped
-                        mDrawerLayout.closeDrawers();
-
-                        // Add code here to update the UI based on the item selected
-                        // For example, swap UI fragments here
-
-                        Intent intent = new Intent(SearchResults.this, MainActivity.class);
-                        startActivity(intent);
-
-                        return true;
-                    }
-                });*/
-
-
-
     }
 
     private void setUpRecyclerView(String search_result)
     {
-        boolean mark = false;
+        //checks if the search_result is equal to title of a listing in notebookRef
+        //version 1
 
-        if (search_result.equals(search_result)) {
+       if (search_result.equals(search_result)) {
             query = notebookRef.whereEqualTo("title", search_result);
 
-            query.orderBy("title");
+            //query.orderBy("ISBN");
         }
-        else if(search_result.equals(search_result)) {
+
+
+        /*else if(search_result.equals(search_result)) {
             query = notebookRef.whereEqualTo("author", search_result);
 
             query.orderBy("title");
-        }
+        }*/
 
-        else if(search_result.equals(search_result)) {
+        /*else if(search_result.equals(search_result)) {
             query = notebookRef.whereEqualTo("ISBN", search_result);
 
             query.orderBy("title");
-        }
+        }*/
+
+        else
+            query = notebookRef.orderBy("title");
+
+
 
 
 
