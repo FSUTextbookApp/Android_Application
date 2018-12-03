@@ -27,9 +27,10 @@
         <activity android:name=".AccountCreated" />
         <activity android:name=".GetBiologyBooks" />
         <activity android:name=".MyAccount" />
-        <activity android:name=".ChooseSubject"/>
-            <activity android:name=".CreateListingActivity">
-        </activity>
+        <activity android:name=".ChooseSubject" />
+        <activity android:name=".CreateListingActivity" />
+        <activity android:name=".Search" />
+        <activity android:name=".SearchResults"></activity>
     </application>
 
 </manifest>

@@ -10,7 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-public class ChooseSubject extends AppCompatActivity {
+public class
+ChooseSubject extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
