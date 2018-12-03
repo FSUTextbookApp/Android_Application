@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+                //testing adding book
                 final Books newBook = new Books("Machine Learning- Math", "Sharanya", "123456789", "Sociology", "this is a short description of the book this is a short description of the book this is a short description", "98", "email@fsu.edu");
                 db.collection("Books").add(newBook);
 
@@ -90,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         flexBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ChooseSubject.class));
+                startActivity(new Intent(MainActivity.this, Search.class));
             }
         });
     }

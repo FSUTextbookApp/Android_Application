@@ -19,19 +19,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/subjectSpinner"
-        android:layout_width="245dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="83dp"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="83dp"
-        android:layout_marginBottom="88dp"
-        android:entries="@array/departments"
-        app:layout_constraintBottom_toTopOf="@+id/searchButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:id="@+id/subjectSpinner"
+    android:layout_width="245dp"
+    android:layout_height="31dp"
+    android:layout_marginStart="83dp"
+    android:layout_marginTop="124dp"
+    android:layout_marginEnd="83dp"
+    android:layout_marginBottom="88dp"
+    android:entries="@array/departments"
+    app:layout_constraintBottom_toTopOf="@+id/searchButton"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/searchButton"
