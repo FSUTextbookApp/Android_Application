@@ -43,7 +43,7 @@ public class MyAccount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_account);
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         if (user != null) {
             // Name, email address, and profile photo Url
@@ -149,6 +149,7 @@ public class MyAccount extends AppCompatActivity {
                         // For example, swap UI fragments here
 
                         if(menuItem.getTitle().equals("Home Page")) {
+                            
                             Intent intent = new Intent(MyAccount.this, MainActivity.class);
                             startActivity(intent);
                         }

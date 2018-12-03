@@ -88,6 +88,7 @@ public class CreateListingActivity extends AppCompatActivity {
                         // For example, swap UI fragments here
 
                         if(menuItem.getTitle().equals("Home Page")) {
+
                             Intent intent = new Intent(CreateListingActivity.this, MainActivity.class);
                             startActivity(intent);
                         }
