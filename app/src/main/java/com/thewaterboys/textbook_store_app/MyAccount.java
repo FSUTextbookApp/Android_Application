@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -37,6 +38,8 @@ public class MyAccount extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference BookRef = db.collection("Books");
     private CollectionReference UserRef = db.collection("Users");
+    final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    private DocumentReference userDocRef = db.collection("Users").document("jcarter@email.com");
     private NoteAdapter adapter;
     private Query query;
 
@@ -49,7 +52,7 @@ public class MyAccount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_account);
 
-        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
 
         if (user != null) {
             // Name, email address, and profile photo Url
@@ -83,8 +86,27 @@ public class MyAccount extends AppCompatActivity {
             Email.setText(email);
 
             final EditText FirstName = (EditText) findViewById(R.id.firstName2);
-            EditText LastName = (EditText) findViewById(R.id.lastName2);
+            final EditText LastName = (EditText) findViewById(R.id.lastName2);
             EditText PhoneNumber = (EditText) findViewById(R.id.phoneNumber);
+
+            ///this grabs a particular document!!! needs work on, i had to leave
+            userDocRef.get()
+                    .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                            if (documentSnapshot.exists()) {
+
+                                LastName.setText(documentSnapshot.getString("LastName"));
+
+
+                                //Map<String, Object> note = documentSnapshot.getData();
+
+
+                            } else {
+                                Toast.makeText(MyAccount.this, "Document does not exist", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
 
             //FOLLOWING CODE IS TO TEST PULLING USER DATA FROM FIRESTORE DATABASE
 
