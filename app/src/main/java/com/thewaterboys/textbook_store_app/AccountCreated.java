@@ -63,7 +63,7 @@ public class AccountCreated extends AppCompatActivity {
                         // For example, swap UI fragments here
 
                         if(menuItem.getTitle().equals("Home Page")) {
-                            Intent intent = new Intent(AccountCreated.this, MainActivity.class);
+                            Intent intent = new Intent(AccountCreated.this, UserHome.class);
                             startActivity(intent);
                         }
 

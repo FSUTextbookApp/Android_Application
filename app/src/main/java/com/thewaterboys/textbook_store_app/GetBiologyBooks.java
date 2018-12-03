@@ -110,6 +110,10 @@ public class GetBiologyBooks extends AppCompatActivity {
         else
             query = notebookRef.whereEqualTo("subject", subject);
 
+
+
+        ;
+
         FirestoreRecyclerOptions<Note> options = new FirestoreRecyclerOptions.Builder<Note>()
                 .setQuery(query, Note.class)
                 .build();

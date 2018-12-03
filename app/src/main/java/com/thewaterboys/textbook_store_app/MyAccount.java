@@ -150,7 +150,7 @@ public class MyAccount extends AppCompatActivity {
 
                         if(menuItem.getTitle().equals("Home Page")) {
                             
-                            Intent intent = new Intent(MyAccount.this, MainActivity.class);
+                            Intent intent = new Intent(MyAccount.this, UserHome.class);
                             startActivity(intent);
                         }
 

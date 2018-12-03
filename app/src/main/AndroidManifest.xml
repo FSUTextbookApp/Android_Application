@@ -26,9 +26,9 @@
         <activity android:name=".AccountCreated" />
         <activity android:name=".GetBiologyBooks" />
         <activity android:name=".MyAccount" />
-        <activity android:name=".ChooseSubject"/>
-            <activity android:name=".CreateListingActivity">
-        </activity>
+        <activity android:name=".ChooseSubject" />
+        <activity android:name=".CreateListingActivity"></activity>
+        <activity android:name=".UserHome"></activity>
     </application>
 
 </manifest>

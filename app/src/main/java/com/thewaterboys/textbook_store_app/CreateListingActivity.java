@@ -89,7 +89,7 @@ public class CreateListingActivity extends AppCompatActivity {
 
                         if(menuItem.getTitle().equals("Home Page")) {
 
-                            Intent intent = new Intent(CreateListingActivity.this, MainActivity.class);
+                            Intent intent = new Intent(CreateListingActivity.this, UserHome.class);
                             startActivity(intent);
                         }
 

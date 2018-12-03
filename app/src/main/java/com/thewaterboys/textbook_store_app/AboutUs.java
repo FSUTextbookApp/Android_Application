@@ -31,7 +31,7 @@ public class AboutUs extends AppCompatActivity {
                         // Add code here to update the UI based on the item selected
                         // For example, swap UI fragments here
 
-                        Intent intent = new Intent(AboutUs.this, MainActivity.class);
+                        Intent intent = new Intent(AboutUs.this, UserHome.class);
                         startActivity(intent);
 
                         return true;
