@@ -103,6 +103,11 @@ public class CreateListingActivity extends AppCompatActivity {
                             startActivity(intent);
                         }
 
+                        if(menuItem.getTitle().equals("Search by Title")) {
+                            Intent intent = new Intent(CreateListingActivity.this, Search.class);
+                            startActivity(intent);
+                        }
+
                         if(menuItem.getTitle().equals("List a Book for Sale")) {
                             //do nothing
                         }

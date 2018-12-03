@@ -14,11 +14,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
 public class SearchResults extends AppCompatActivity {
+
+    private DrawerLayout mDrawerLayout;
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference notebookRef = db.collection("Books");
@@ -57,6 +60,55 @@ public class SearchResults extends AppCompatActivity {
 
 
         setUpRecyclerView(searchResult);
+
+        mDrawerLayout = findViewById(R.id.drawer_layout);
+
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        // set item as selected to persist highlight
+                        menuItem.setChecked(true);
+                        // close drawer when item is tapped
+                        mDrawerLayout.closeDrawers();
+
+                        // Add code here to update the UI based on the item selected
+                        // For example, swap UI fragments here
+
+                        if(menuItem.getTitle().equals("Home Page")) {
+                            FirebaseAuth.getInstance().signOut();
+                            Intent intent = new Intent(SearchResults.this, MainActivity.class);
+                            startActivity(intent);
+                        }
+
+                        if(menuItem.getTitle().equals("About Us")) {
+                            Intent intent = new Intent(SearchResults.this, AboutUs.class);
+                            startActivity(intent);
+                        }
+
+                        if(menuItem.getTitle().equals("Books by Subject")) {
+                            Intent intent = new Intent(SearchResults.this, ChooseSubject.class);
+                            startActivity(intent);
+                        }
+
+                        if(menuItem.getTitle().equals("List a Book for Sale")) {
+                            Intent intent = new Intent(SearchResults.this, CreateListingActivity.class);
+                            startActivity(intent);
+                        }
+
+                        if(menuItem.getTitle().equals("Search by Title")) {
+                            Intent intent = new Intent(SearchResults.this, Search.class);
+                            startActivity(intent);
+                        }
+
+                        if(menuItem.getTitle().equals("My Account")) {
+                            Intent intent = new Intent(SearchResults.this, MyAccount.class);
+                            startActivity(intent);
+                        }
+                        return true;
+                    }
+                });
 
     }
 

@@ -82,6 +82,11 @@ public class AccountCreated extends AppCompatActivity {
                             startActivity(intent);
                         }
 
+                        if(menuItem.getTitle().equals("Search by Title")) {
+                            Intent intent = new Intent(AccountCreated.this, Search.class);
+                            startActivity(intent);
+                        }
+
                         if(menuItem.getTitle().equals("My Account")) {
                             Intent intent = new Intent(AccountCreated.this, MyAccount.class);
                             startActivity(intent);

@@ -234,6 +234,11 @@ public class MyAccount extends AppCompatActivity {
                             startActivity(intent);
                         }
 
+                        if(menuItem.getTitle().equals("Search by Title")) {
+                            Intent intent = new Intent(MyAccount.this, Search.class);
+                            startActivity(intent);
+                        }
+
                         if(menuItem.getTitle().equals("My Account")) {
                             //do nothing
                         }

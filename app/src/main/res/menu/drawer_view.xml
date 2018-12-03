@@ -21,5 +21,9 @@
             android:id="@+id/nav_myAccount"
             android:icon="@drawable/ic_looks_one"
             android:title="My Account" />
+        <item
+            android:id="@+id/nav_Search"
+            android:icon="@drawable/ic_looks_one"
+            android:title="Search by Title" />
     </group>
 </menu>
