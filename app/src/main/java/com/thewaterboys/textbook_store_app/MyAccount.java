@@ -80,7 +80,9 @@ public class MyAccount extends AppCompatActivity {
 
             Bundle mybundle = myIntent.getExtras();
 
-            String bookPostingEmail = mybundle.getString("sellerEmail");
+            //FOLLOWING CODE IS NOT NEEDED, CAUSES CRASH WHEN NAVIGATING TO MY ACCOUNT PAGE
+
+            /*String bookPostingEmail = mybundle.getString("sellerEmail");
             String bookTitle = mybundle.getString("bookTitle");
 
             System.out.println(user.getEmail());
@@ -89,7 +91,7 @@ public class MyAccount extends AppCompatActivity {
             if(user.getEmail().equals(bookPostingEmail)) {
                 Toast t = Toast.makeText(this, bookTitle, Toast.LENGTH_SHORT);
                 t.show();
-            }
+            }*/
 
             /*System.out.println("TEST TEST TEST");
             System.out.println("EMAIL IS: ");
@@ -156,6 +158,19 @@ public class MyAccount extends AppCompatActivity {
                             startActivity(intent);
                         }
 
+                        if(menuItem.getTitle().equals("Books by Subject")) {
+                            Intent intent = new Intent(MyAccount.this, ChooseSubject.class);
+                            startActivity(intent);
+                        }
+
+                        if(menuItem.getTitle().equals("List a Book for Sale")) {
+                            Intent intent = new Intent(MyAccount.this, CreateListingActivity.class);
+                            startActivity(intent);
+                        }
+
+                        if(menuItem.getTitle().equals("My Account")) {
+                            //do nothing
+                        }
                         return true;
                     }
                 });
