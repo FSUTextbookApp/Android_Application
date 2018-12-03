@@ -39,7 +39,7 @@ public class MyAccount extends AppCompatActivity {
     private CollectionReference BookRef = db.collection("Books");
     private CollectionReference UserRef = db.collection("Users");
     final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    private DocumentReference userDocRef = db.collection("Users").document("jcarter@email.com");
+
     private NoteAdapter adapter;
     private Query query;
 
@@ -58,6 +58,8 @@ public class MyAccount extends AppCompatActivity {
             // Name, email address, and profile photo Url
             name = user.getDisplayName();
             email = user.getEmail();
+
+            DocumentReference userDocRef = db.collection("Users").document(email);
 
             // Check if user's email is verified
             boolean emailVerified = user.isEmailVerified();
@@ -87,7 +89,7 @@ public class MyAccount extends AppCompatActivity {
 
             final EditText FirstName = (EditText) findViewById(R.id.firstName2);
             final EditText LastName = (EditText) findViewById(R.id.lastName2);
-            EditText PhoneNumber = (EditText) findViewById(R.id.phoneNumber);
+            final EditText PhoneNumber = (EditText) findViewById(R.id.phoneNumber);
 
             ///this grabs a particular document!!! needs work on, i had to leave
             userDocRef.get()
@@ -97,6 +99,8 @@ public class MyAccount extends AppCompatActivity {
                             if (documentSnapshot.exists()) {
 
                                 LastName.setText(documentSnapshot.getString("LastName"));
+                                FirstName.setText(documentSnapshot.getString("FirstName"));
+                                PhoneNumber.setText(documentSnapshot.getString("PhoneNumber"));
 
 
                                 //Map<String, Object> note = documentSnapshot.getData();
@@ -109,29 +113,29 @@ public class MyAccount extends AppCompatActivity {
                     });
 
             //FOLLOWING CODE IS TO TEST PULLING USER DATA FROM FIRESTORE DATABASE
-
-            CollectionReference usersRef = db.collection("Users");
-
-            Query query = usersRef.whereEqualTo("Email", email);
-
-            System.out.println("TEST QUERY PRINT: " + query);
-
-            DocumentReference docRef = db.collection("Users").document(email);
-            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                    if (task.isSuccessful()) {
-                        DocumentSnapshot document = task.getResult();
-                        if (document.exists()) {
-                            Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-                        } else {
-                            Log.d(TAG, "No such document");
-                        }
-                    } else {
-                        Log.d(TAG, "get failed with ", task.getException());
-                    }
-                }
-            });
+//
+//            CollectionReference usersRef = db.collection("Users");
+//
+//            Query query = usersRef.whereEqualTo("Email", email);
+//
+//            System.out.println("TEST QUERY PRINT: " + query);
+//
+//            DocumentReference docRef = db.collection("Users").document(email);
+//            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+//                @Override
+//                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+//                    if (task.isSuccessful()) {
+//                        DocumentSnapshot document = task.getResult();
+//                        if (document.exists()) {
+//                            Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+//                        } else {
+//                            Log.d(TAG, "No such document");
+//                        }
+//                    } else {
+//                        Log.d(TAG, "get failed with ", task.getException());
+//                    }
+//                }
+//            });
 
 
 
