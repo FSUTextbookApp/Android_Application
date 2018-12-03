@@ -24,6 +24,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
+    boolean formerror = false;
 
     private final static String TAG = "MainActivity";
 
@@ -38,42 +39,55 @@ public class MainActivity extends AppCompatActivity {
 
         Button logInButton = (Button) findViewById(R.id.logIn);
 
+        final EditText EmailIn = findViewById(R.id.emailSignIn);
+        final EditText PasswordIn = findViewById(R.id.passwordSignIn);
+
         logInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final EditText EmailIn = findViewById(R.id.emailSignIn);
-                final EditText PasswordIn = findViewById(R.id.passwordSignIn);
+                String emailString = EmailIn.getText().toString();
+                String passwordString = PasswordIn.getText().toString();
 
-                String email = EmailIn.getText().toString();
-                String password = PasswordIn.getText().toString();
+                //if text on email view and password are not null
+                if (emailString.matches("")) {
+                    formerror = true;
+                    EmailIn.setError("Missing Email");
+                }
+                if (passwordString.matches("")) {
+                    formerror = true;
+                    PasswordIn.setError("Missing Password");
+                }
+                else {
+                    String email = EmailIn.getText().toString();
+                    String password = PasswordIn.getText().toString();
 
-                System.out.println(email);
-                System.out.println(password);
+                    System.out.println(email);
+                    System.out.println(password);
 
-                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-                //testing adding book
-                final Books newBook = new Books("Machine Learning- Math", "Sharanya", "123456789", "Sociology", "this is a short description of the book this is a short description of the book this is a short description", "98", "email@fsu.edu");
-                db.collection("Books").add(newBook);
+                    final Books newBook = new Books("Machine Learning- Math", "Sharanya", "123456789", "Sociology", "this is a short description of the book this is a short description of the book this is a short description", "98", "email@fsu.edu");
+                    db.collection("Books").add(newBook);
 
-                mAuth.signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    Log.d(TAG, "signInWithEmail:success");
-                                    FirebaseUser user = mAuth.getCurrentUser();
-                                    Toast.makeText(MainActivity.this, "Authentication Success.", Toast.LENGTH_SHORT).show();
-                                    Toast.makeText(MainActivity.this, "Welcome back " + user.getEmail() + "!", Toast.LENGTH_SHORT).show();
+                    mAuth.signInWithEmailAndPassword(email, password)
+                            .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        Log.d(TAG, "signInWithEmail:success");
+                                        FirebaseUser user = mAuth.getCurrentUser();
+                                        Toast.makeText(MainActivity.this, "Authentication Success.", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(MainActivity.this, "Welcome back " + user.getEmail() + "!", Toast.LENGTH_SHORT).show();
 
-                                    updateUI(user, newBook);
-                                } else {
-                                    // If sign in fails, display a message to the user.
-                                    Log.w(TAG, "signInWithEmail:failure", task.getException());
-                                    Toast.makeText(MainActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                                        updateUI(user, newBook);
+                                    } else {
+                                        // If sign in fails, display a message to the user.
+                                        Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                        Toast.makeText(MainActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                                    }
                                 }
-                            }
-                        });
+                            });
+                }
             }
         });
 
@@ -86,14 +100,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //This is a flexable button that should be deleted before presenting*****************************8888***
+        /*//This is a flexable button that should be deleted before presenting*****************************8888***
         Button flexBtn =  findViewById(R.id.flexButton);
         flexBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Search.class));
+                startActivity(new Intent(MainActivity.this, ChooseSubject.class));
             }
-        });
+        });*/
     }
 
     public void updateUI(FirebaseUser usr, final Books b) {

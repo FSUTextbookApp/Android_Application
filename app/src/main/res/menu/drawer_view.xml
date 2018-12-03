@@ -9,13 +9,17 @@
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_looks_one"
             android:title="About Us" />
-       <!-- <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Test3" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Test4" />-->
+            android:id="@+id/nav_booksBySubject"
+            android:icon="@drawable/ic_looks_one"
+            android:title="Books by Subject" />
+        <item
+            android:id="@+id/nav_newPost"
+            android:icon="@drawable/ic_looks_one"
+            android:title="List a Book for Sale" />
+        <item
+            android:id="@+id/nav_myAccount"
+            android:icon="@drawable/ic_looks_one"
+            android:title="My Account" />
     </group>
 </menu>

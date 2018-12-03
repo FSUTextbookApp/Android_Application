@@ -87,8 +87,30 @@ public class CreateListingActivity extends AppCompatActivity {
                         // Add code here to update the UI based on the item selected
                         // For example, swap UI fragments here
 
-                        Intent intent = new Intent(CreateListingActivity.this, MainActivity.class);
-                        startActivity(intent);
+                        if(menuItem.getTitle().equals("Home Page")) {
+
+                            Intent intent = new Intent(CreateListingActivity.this, MainActivity.class);
+                            startActivity(intent);
+                        }
+
+                        if(menuItem.getTitle().equals("About Us")) {
+                            Intent intent = new Intent(CreateListingActivity.this, AboutUs.class);
+                            startActivity(intent);
+                        }
+
+                        if(menuItem.getTitle().equals("Books by Subject")) {
+                            Intent intent = new Intent(CreateListingActivity.this, ChooseSubject.class);
+                            startActivity(intent);
+                        }
+
+                        if(menuItem.getTitle().equals("List a Book for Sale")) {
+                            //do nothing
+                        }
+
+                        if(menuItem.getTitle().equals("My Account")) {
+                            Intent intent = new Intent(CreateListingActivity.this, MyAccount.class);
+                            startActivity(intent);
+                        }
 
                         return true;
                     }

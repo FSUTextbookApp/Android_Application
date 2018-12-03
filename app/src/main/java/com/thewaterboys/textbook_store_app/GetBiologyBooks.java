@@ -67,8 +67,29 @@ public class GetBiologyBooks extends AppCompatActivity {
                         // Add code here to update the UI based on the item selected
                         // For example, swap UI fragments here
 
-                        Intent intent = new Intent(GetBiologyBooks.this, MainActivity.class);
-                        startActivity(intent);
+                        if(menuItem.getTitle().equals("Home Page")) {
+                            Intent intent = new Intent(GetBiologyBooks.this, MainActivity.class);
+                            startActivity(intent);
+                        }
+
+                        if(menuItem.getTitle().equals("About Us")) {
+                            Intent intent = new Intent(GetBiologyBooks.this, AboutUs.class);
+                            startActivity(intent);
+                        }
+
+                        if(menuItem.getTitle().equals("Books by Subject")) {
+                            //do nothing
+                        }
+
+                        if(menuItem.getTitle().equals("List a Book for Sale")) {
+                            Intent intent = new Intent(GetBiologyBooks.this, CreateListingActivity.class);
+                            startActivity(intent);
+                        }
+
+                        if(menuItem.getTitle().equals("My Account")) {
+                            Intent intent = new Intent(GetBiologyBooks.this, MyAccount.class);
+                            startActivity(intent);
+                        }
 
                         return true;
                     }
