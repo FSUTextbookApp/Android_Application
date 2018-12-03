@@ -26,10 +26,10 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/subjectText" />
+            app:layout_constraintTop_toBottomOf="@+id/searchText" />
 
         <TextView
-            android:id="@+id/subjectText"
+            android:id="@+id/searchText"
             android:layout_width="94dp"
             android:layout_height="27dp"
             android:layout_marginStart="158dp"
