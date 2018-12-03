@@ -73,7 +73,7 @@ public class AccountCreated extends AppCompatActivity {
                         }
 
                         if(menuItem.getTitle().equals("Books by Subject")) {
-                            Intent intent = new Intent(AccountCreated.this, GetBiologyBooks.class);
+                            Intent intent = new Intent(AccountCreated.this, ChooseSubject.class);
                             startActivity(intent);
                         }
 
