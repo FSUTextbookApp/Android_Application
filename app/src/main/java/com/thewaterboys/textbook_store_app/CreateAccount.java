@@ -18,7 +18,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CreateAccount extends Activity {
 
@@ -229,8 +234,20 @@ public class CreateAccount extends Activity {
             myIntent.putExtras(mybundle);
 
             FirebaseFirestore db = FirebaseFirestore.getInstance();
-            Users newUser = new Users(mybundle.getString("FirstNameOut"), mybundle.getString("LastNameOut"), mybundle.getString("EmailOut"), mybundle.getString("PhoneOut"));
-            db.collection("Users").add(newUser);
+            /*Users newUser = new Users(mybundle.getString("FirstNameOut"), mybundle.getString("LastNameOut"), mybundle.getString("EmailOut"), mybundle.getString("PhoneOut"));
+            db.collection("Users").add(newUser);*/
+
+            //TESTING
+
+            CollectionReference users = db.collection("Users");
+            Map<String, Object> data1 = new HashMap<>();
+            data1.put("FirstName", mybundle.getString("FirstNameOut"));
+            data1.put("LastName", mybundle.getString("LastNameOut"));
+            data1.put("Email", mybundle.getString("EmailOut"));
+            data1.put("PhoneNumber", mybundle.getString("PhoneOut"));
+            users.document(mybundle.getString("EmailOut")).set(data1);
+
+            //END TESTING
 
             mAuth = FirebaseAuth.getInstance();
 
