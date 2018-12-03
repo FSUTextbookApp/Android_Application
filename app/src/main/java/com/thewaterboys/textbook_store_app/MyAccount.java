@@ -22,8 +22,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.auth.User;
 
 public class MyAccount extends AppCompatActivity {
 
@@ -31,6 +36,7 @@ public class MyAccount extends AppCompatActivity {
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference BookRef = db.collection("Books");
+    private CollectionReference UserRef = db.collection("Users");
     private NoteAdapter adapter;
     private Query query;
 
@@ -75,6 +81,39 @@ public class MyAccount extends AppCompatActivity {
 
             EditText Email = (EditText) findViewById(R.id.email2);
             Email.setText(email);
+
+            final EditText FirstName = (EditText) findViewById(R.id.firstName2);
+            EditText LastName = (EditText) findViewById(R.id.lastName2);
+            EditText PhoneNumber = (EditText) findViewById(R.id.phoneNumber);
+
+            //FOLLOWING CODE IS TO TEST PULLING USER DATA FROM FIRESTORE DATABASE
+
+            CollectionReference usersRef = db.collection("Users");
+
+            Query query = usersRef.whereEqualTo("Email", email);
+
+            System.out.println("TEST QUERY PRINT: " + query);
+
+            DocumentReference docRef = db.collection("Users").document(email);
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        if (document.exists()) {
+                            Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                        } else {
+                            Log.d(TAG, "No such document");
+                        }
+                    } else {
+                        Log.d(TAG, "get failed with ", task.getException());
+                    }
+                }
+            });
+
+
+
+            //END TEST
 
             Intent myIntent = getIntent();
 
@@ -149,7 +188,7 @@ public class MyAccount extends AppCompatActivity {
                         // For example, swap UI fragments here
 
                         if(menuItem.getTitle().equals("Home Page")) {
-
+                            FirebaseAuth.getInstance().signOut();
                             Intent intent = new Intent(MyAccount.this, MainActivity.class);
                             startActivity(intent);
                         }
