@@ -90,14 +90,12 @@ public class CreateAccount extends Activity {
             value = false;
             return false;
         }
-
     }
 
     boolean nameLength(EditText text){
 
         if( text.length() <= 2)
             return true;
-
         else
         {
             value = false;
@@ -129,7 +127,7 @@ public class CreateAccount extends Activity {
 
     }
 
-    boolean passwordMatch(EditText Password, EditText VPassword) {
+    boolean passwordMatch() {
 
         if (Password == VPassword)
             return true;
@@ -176,7 +174,7 @@ public class CreateAccount extends Activity {
             formError = false;
         }
 
-        if(!passwordMatch(Password, VPassword)){
+        if(passwordMatch()){
             Password.setError("Passwords don't match");
             formError = false;
         }
@@ -187,38 +185,31 @@ public class CreateAccount extends Activity {
 
         }
 
-       /* if(!passwordLength(VPassword)){
+        if(!passwordLength(VPassword)){
             Toast toast = Toast.makeText(this, "Password too short", Toast.LENGTH_SHORT);
             toast.show();
             formError = false;
-        }*/
+        }
 
         if(isPhone(Phone) == false){
-            Phone.setError("Phone number invalid");
-            formError = false;
+           Phone.setError("Phone number invalid");
+           formError = false;
         }
 
         if(!Accept.isChecked())
         {
-            Accept.setError("Please accept terms");
+            Toast t = Toast.makeText(this, "Please agree to terms", Toast.LENGTH_SHORT);
+            t.show();
             formError = false;
         }
 
-        if(isTrue()){
-            Toast t = Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT);
-            t.show();
+        if(!formError){
+            formError = true;
         }
-
-
-            //permanently set to true once any error trips, needs to be reset to false once error is corrected.
-        if(!formError)
-        {
-            Toast.makeText(this, "Error in form", Toast.LENGTH_LONG).show();
-        }
-
-
         else
         {
+            Toast t = Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT);
+            t.show();
             Intent myIntent = new Intent (CreateAccount.this, AccountCreated.class);
 
             Bundle mybundle = new Bundle();

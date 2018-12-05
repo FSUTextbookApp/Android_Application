@@ -66,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
 
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-                    final Books newBook = new Books("Machine Learning- Math", "Sharanya", "123456789", "Sociology", "this is a short description of the book this is a short description of the book this is a short description", "98", "email@fsu.edu");
-                    db.collection("Books").add(newBook);
+                    /*final Books newBook = new Books("Machine Learning- Math", "Sharanya", "123456789", "Sociology", "this is a short description of the book this is a short description of the book this is a short description", "98", "email@fsu.edu");
+                    db.collection("Books").add(newBook);*/
 
                     mAuth.signInWithEmailAndPassword(email, password)
                             .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                                         Toast.makeText(MainActivity.this, "Authentication Success.", Toast.LENGTH_SHORT).show();
                                         Toast.makeText(MainActivity.this, "Welcome back " + user.getEmail() + "!", Toast.LENGTH_SHORT).show();
 
-                                        updateUI(user, newBook);
+                                        updateUI(user);
                                     } else {
                                         // If sign in fails, display a message to the user.
                                         Log.w(TAG, "signInWithEmail:failure", task.getException());
@@ -110,10 +110,10 @@ public class MainActivity extends AppCompatActivity {
         });*/
     }
 
-    public void updateUI(FirebaseUser usr, final Books b) {
+    public void updateUI(FirebaseUser usr) {
         Intent intent = new Intent(MainActivity.this, MyAccount.class);
 
-        Bundle mybundle = new Bundle();
+        /*Bundle mybundle = new Bundle();
 
         //mybundle.putString("sellerEmail", b.sellersEmail);
         mybundle.putString("bookTitle", b.title);
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
         mybundle.putString("bookPrice", b.price);
         mybundle.putString("bookSubject", b.subject);
 
-        intent.putExtras(mybundle);
+        intent.putExtras(mybundle); */
 
         startActivity(intent);
     }
