@@ -2,28 +2,28 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/nav_myAccount"
             android:icon="@drawable/ic_looks_one"
-            android:title="Home Page" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_looks_one"
-            android:title="About Us" />
+            android:title="My Account" />
         <item
             android:id="@+id/nav_booksBySubject"
             android:icon="@drawable/ic_looks_one"
             android:title="Books by Subject" />
         <item
+            android:id="@+id/nav_Search"
+            android:icon="@drawable/ic_looks_one"
+            android:title="Search by Title" />
+        <item
             android:id="@+id/nav_newPost"
             android:icon="@drawable/ic_looks_one"
             android:title="List a Book for Sale" />
         <item
-            android:id="@+id/nav_myAccount"
+            android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_looks_one"
-            android:title="My Account" />
+            android:title="About Us" />
         <item
-            android:id="@+id/nav_Search"
+            android:id="@+id/nav_home"
             android:icon="@drawable/ic_looks_one"
-            android:title="Search by Title" />
+            android:title="Sign Out" />
     </group>
 </menu>

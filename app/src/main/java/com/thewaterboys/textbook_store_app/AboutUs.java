@@ -6,6 +6,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class AboutUs extends AppCompatActivity {
 
@@ -31,9 +34,37 @@ public class AboutUs extends AppCompatActivity {
                         // Add code here to update the UI based on the item selected
                         // For example, swap UI fragments here
 
-                        Intent intent = new Intent(AboutUs.this, MainActivity.class);
-                        startActivity(intent);
+                        if(menuItem.getTitle().equals("Sign Out")) {
+                            FirebaseAuth.getInstance().signOut();
+                            Toast.makeText(AboutUs.this, "Successfully Signed Out", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(AboutUs.this, MainActivity.class);
+                            startActivity(intent);
+                        }
 
+                        if(menuItem.getTitle().equals("About Us")) {
+                            Intent intent = new Intent(AboutUs.this, AboutUs.class);
+                            startActivity(intent);
+                        }
+
+                        if(menuItem.getTitle().equals("Books by Subject")) {
+                            Intent intent = new Intent(AboutUs.this, ChooseSubject.class);
+                            startActivity(intent);
+                        }
+
+                        if(menuItem.getTitle().equals("List a Book for Sale")) {
+                            Intent intent = new Intent(AboutUs.this, CreateListingActivity.class);
+                            startActivity(intent);
+                        }
+
+                        if(menuItem.getTitle().equals("Search by Title")) {
+                            Intent intent = new Intent(AboutUs.this, Search.class);
+                            startActivity(intent);
+                        }
+
+                        if(menuItem.getTitle().equals("My Account")) {
+                            Intent intent = new Intent(AboutUs.this, MyAccount.class);
+                            startActivity(intent);
+                        }
                         return true;
                     }
                 });

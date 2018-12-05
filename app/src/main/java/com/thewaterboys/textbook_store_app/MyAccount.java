@@ -112,55 +112,10 @@ public class MyAccount extends AppCompatActivity {
                         }
                     });
 
-            //FOLLOWING CODE IS TO TEST PULLING USER DATA FROM FIRESTORE DATABASE
-//
-//            CollectionReference usersRef = db.collection("Users");
-//
-//            Query query = usersRef.whereEqualTo("Email", email);
-//
-//            System.out.println("TEST QUERY PRINT: " + query);
-//
-//            DocumentReference docRef = db.collection("Users").document(email);
-//            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-//                @Override
-//                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-//                    if (task.isSuccessful()) {
-//                        DocumentSnapshot document = task.getResult();
-//                        if (document.exists()) {
-//                            Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-//                        } else {
-//                            Log.d(TAG, "No such document");
-//                        }
-//                    } else {
-//                        Log.d(TAG, "get failed with ", task.getException());
-//                    }
-//                }
-//            });
-
-
-
-            //END TEST
-
             Intent myIntent = getIntent();
 
             Bundle mybundle = myIntent.getExtras();
 
-            //FOLLOWING CODE IS NOT NEEDED, CAUSES CRASH WHEN NAVIGATING TO MY ACCOUNT PAGE
-
-            /*String bookPostingEmail = mybundle.getString("sellerEmail");
-            String bookTitle = mybundle.getString("bookTitle");
-
-            System.out.println(user.getEmail());
-            System.out.println(bookPostingEmail);
-
-            if(user.getEmail().equals(bookPostingEmail)) {
-                Toast t = Toast.makeText(this, bookTitle, Toast.LENGTH_SHORT);
-                t.show();
-            }*/
-
-            /*System.out.println("TEST TEST TEST");
-            System.out.println("EMAIL IS: ");
-            System.out.println(bookPostingEmail);*/
         }
 
         Button DeleteAccountButton = (Button) findViewById(R.id.delAccBtn);
@@ -213,8 +168,9 @@ public class MyAccount extends AppCompatActivity {
                         // Add code here to update the UI based on the item selected
                         // For example, swap UI fragments here
 
-                        if(menuItem.getTitle().equals("Home Page")) {
+                        if(menuItem.getTitle().equals("Sign Out")) {
                             FirebaseAuth.getInstance().signOut();
+                            Toast.makeText(MyAccount.this, "Successfully Signed Out", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(MyAccount.this, MainActivity.class);
                             startActivity(intent);
                         }

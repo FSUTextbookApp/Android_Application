@@ -76,8 +76,9 @@ public class SearchResults extends AppCompatActivity {
                         // Add code here to update the UI based on the item selected
                         // For example, swap UI fragments here
 
-                        if(menuItem.getTitle().equals("Home Page")) {
+                        if(menuItem.getTitle().equals("Sign Out")) {
                             FirebaseAuth.getInstance().signOut();
+                            Toast.makeText(SearchResults.this, "Successfully Signed Out", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(SearchResults.this, MainActivity.class);
                             startActivity(intent);
                         }
