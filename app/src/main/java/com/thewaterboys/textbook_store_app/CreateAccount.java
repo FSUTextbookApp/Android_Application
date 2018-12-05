@@ -195,7 +195,7 @@ public class CreateAccount extends Activity {
 
         if(isPhone(Phone) == false){
            Phone.setError("Phone number invalid");
-            formError = false;
+           formError = false;
         }
 
         if(!Accept.isChecked())

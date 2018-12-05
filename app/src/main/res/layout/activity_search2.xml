@@ -5,7 +5,8 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:background="@color/paper">
 
     <!-- Layout to contain contents of main body of screen (drawer will slide over this) -->
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -18,12 +19,16 @@
 
         <TextView
             android:id="@+id/search_msg"
-            android:layout_width="108dp"
-            android:layout_height="21dp"
+            android:layout_width="143dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="90dp"
-            android:text="Find your text book" />
+            android:layout_marginTop="35dp"
+            android:text="Find your Textbook"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/dusty"/>
 
         <EditText
             android:id="@+id/search"
@@ -56,43 +61,3 @@
         app:menu="@menu/drawer_view"/>
 
 </android.support.v4.widget.DrawerLayout>
-
-<!--
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Search">
-
-
-    <TextView
-        android:id="@+id/search_msg"
-        android:layout_width="108dp"
-        android:layout_height="21dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="90dp"
-        android:text="Find your text book" />
-
-    <EditText
-        android:id="@+id/search"
-        android:layout_width="282dp"
-        android:layout_height="57dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="140dp"
-        android:ems="10"
-        android:hint="Search by Title"
-        android:inputType="textPersonName" />
-
-    <Button
-        android:id="@+id/searchButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="275dp"
-        android:text="Search" />
-</RelativeLayout>-->
