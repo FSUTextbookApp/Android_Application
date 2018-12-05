@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -46,6 +48,16 @@ public class AccountCreated extends AppCompatActivity {
             emailOut.setText(mybundle.getString("EmailOut"));
             phoneOut.setText(mybundle.getString("PhoneOut"));
         }
+
+        Button toMyAccount = (Button) findViewById(R.id.toMyAccount);
+
+        toMyAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent (AccountCreated.this, MyAccount.class);
+                startActivity(myIntent);
+            }
+        });
 
         mDrawerLayout = findViewById(R.id.drawer_layout);
 
