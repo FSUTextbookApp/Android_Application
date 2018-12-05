@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -74,7 +75,9 @@ public class AccountCreated extends AppCompatActivity {
                         // Add code here to update the UI based on the item selected
                         // For example, swap UI fragments here
 
-                        if(menuItem.getTitle().equals("Home Page")) {
+                        if(menuItem.getTitle().equals("Sign Out")) {
+                            FirebaseAuth.getInstance().signOut();
+                            Toast.makeText(AccountCreated.this, "Successfully Signed Out", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(AccountCreated.this, MainActivity.class);
                             startActivity(intent);
                         }
