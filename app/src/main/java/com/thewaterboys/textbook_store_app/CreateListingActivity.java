@@ -18,6 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class CreateListingActivity extends AppCompatActivity {
+    boolean formerror = false;
 
     private DrawerLayout mDrawerLayout;
 
@@ -36,6 +37,7 @@ public class CreateListingActivity extends AppCompatActivity {
         postListingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                formerror = false;
                 final EditText bookTitle = findViewById(R.id.title);
                 final EditText bookAuthor = findViewById(R.id.author);
                 final EditText bookISBN = findViewById(R.id.isbn);
@@ -53,10 +55,44 @@ public class CreateListingActivity extends AppCompatActivity {
                 String price = bookPrice.getText().toString();
                 String subject = spinnerText;
 
+
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-                if(user != null) {
+                if(user == null) {
 
+
+
+                }
+                if (bookTitle.getText().toString().matches(""))
+                {
+                    formerror = true;
+                    bookTitle.setError("Missing Title");
+                }
+                if (bookAuthor.getText().toString().matches(""))
+                {
+                    formerror = true;
+                    bookAuthor.setError("Missing Author");
+                }
+                if (bookISBN.getText().toString().matches(""))
+                {
+                    formerror = true;
+                    bookISBN.setError("Missing ISBN");
+                }
+                if (bookDescription.getText().toString().matches(""))
+                {
+                    formerror = true;
+                    bookDescription.setError("Missing Description");
+                }
+                if (bookPrice.getText().toString().matches(""))
+                {
+                    formerror = true;
+                    bookPrice.setError("Missing Price");
+                }
+                if (formerror == true){
+                    Toast.makeText(CreateListingActivity.this, "Error in Form", Toast.LENGTH_LONG).show();
+                }
+
+                else {
                     String email = user.getEmail();
 
                     Books newBook = new Books(title, author, isbn, subject, description, price, email);
@@ -67,9 +103,11 @@ public class CreateListingActivity extends AppCompatActivity {
 
                     Toast t = Toast.makeText(CreateListingActivity.this, "Successfully Listed New Book", Toast.LENGTH_SHORT);
                     t.show();
-
+                    startActivity(new Intent(CreateListingActivity.this, MyAccount.class));
                 }
-                startActivity(new Intent(CreateListingActivity.this, MyAccount.class));
+
+
+
             }
 
 
