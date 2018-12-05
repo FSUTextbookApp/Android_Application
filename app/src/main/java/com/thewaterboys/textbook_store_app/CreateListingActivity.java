@@ -30,7 +30,7 @@ public class CreateListingActivity extends AppCompatActivity {
         Button postListingBtn = (Button) findViewById(R.id.listBook);
         final Spinner spinner = findViewById(R.id.spinner_subject_CreListing);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.departments,R.layout.support_simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter); 
+        spinner.setAdapter(adapter);
 
 
         postListingBtn.setOnClickListener(new View.OnClickListener() {
