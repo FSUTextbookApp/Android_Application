@@ -42,8 +42,7 @@ public class AboutUs extends AppCompatActivity {
                         }
 
                         if(menuItem.getTitle().equals("About Us")) {
-                            Intent intent = new Intent(AboutUs.this, AboutUs.class);
-                            startActivity(intent);
+                            //do nothing
                         }
 
                         if(menuItem.getTitle().equals("Books by Subject")) {

@@ -14,9 +14,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -74,7 +76,9 @@ public class GetBiologyBooks extends AppCompatActivity {
                         // Add code here to update the UI based on the item selected
                         // For example, swap UI fragments here
 
-                        if(menuItem.getTitle().equals("Home Page")) {
+                        if(menuItem.getTitle().equals("Sign Out")) {
+                            FirebaseAuth.getInstance().signOut();
+                            Toast.makeText(GetBiologyBooks.this, "Successfully Signed Out", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(GetBiologyBooks.this, MainActivity.class);
                             startActivity(intent);
                         }
