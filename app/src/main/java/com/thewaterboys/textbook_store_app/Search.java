@@ -37,7 +37,7 @@ public class Search extends AppCompatActivity {
 
                 String s = Search.toString();
 
-                Toast.makeText(Search.this,  Search.getText().toString(), Toast.LENGTH_LONG ).show();
+                //Toast.makeText(Search.this,  Search.getText().toString(), Toast.LENGTH_LONG ).show();
 
                 myIntent.putExtras(myBundle);
 
