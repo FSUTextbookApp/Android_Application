@@ -129,7 +129,7 @@ public class CreateAccount extends Activity {
 
     }
 
-    boolean passwordMatch() {
+    boolean passwordMatch(EditText Password, EditText VPassword) {
 
         if (Password == VPassword)
             return true;
@@ -176,7 +176,7 @@ public class CreateAccount extends Activity {
             formError = false;
         }
 
-        if(passwordMatch()){
+        if(!passwordMatch(Password, VPassword)){
             Password.setError("Passwords don't match");
             formError = false;
         }
@@ -187,35 +187,34 @@ public class CreateAccount extends Activity {
 
         }
 
-        if(!passwordLength(VPassword)){
+       /* if(!passwordLength(VPassword)){
             Toast toast = Toast.makeText(this, "Password too short", Toast.LENGTH_SHORT);
             toast.show();
             formError = false;
-        }
+        }*/
 
         if(isPhone(Phone) == false){
-           Phone.setError("Phone number invalid");
-           formError = false;
+            Phone.setError("Phone number invalid");
+            formError = false;
         }
 
         if(!Accept.isChecked())
         {
-            Toast t = Toast.makeText(this, "Please agree to terms", Toast.LENGTH_SHORT);
-            t.show();
+            Accept.setError("Please accept terms");
             formError = false;
         }
 
         if(isTrue()){
             Toast t = Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT);
             t.show();
-    }
+        }
 
 
-    //permanently set to true once any error trips, needs to be reset to false once error is corrected.
-        /*if(!formError)
+            //permanently set to true once any error trips, needs to be reset to false once error is corrected.
+        if(!formError)
         {
             Toast.makeText(this, "Error in form", Toast.LENGTH_LONG).show();
-        }*/
+        }
 
 
         else
