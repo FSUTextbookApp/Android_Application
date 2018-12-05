@@ -90,14 +90,12 @@ public class CreateAccount extends Activity {
             value = false;
             return false;
         }
-
     }
 
     boolean nameLength(EditText text){
 
         if( text.length() <= 2)
             return true;
-
         else
         {
             value = false;
@@ -205,21 +203,13 @@ public class CreateAccount extends Activity {
             formError = false;
         }
 
-        if(isTrue()){
-            Toast t = Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT);
-            t.show();
-    }
-
-
-    //permanently set to true once any error trips, needs to be reset to false once error is corrected.
-        /*if(!formError)
-        {
-            Toast.makeText(this, "Error in form", Toast.LENGTH_LONG).show();
-        }*/
-
-
+        if(!formError){
+            formError = true;
+        }
         else
         {
+            Toast t = Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT);
+            t.show();
             Intent myIntent = new Intent (CreateAccount.this, AccountCreated.class);
 
             Bundle mybundle = new Bundle();
