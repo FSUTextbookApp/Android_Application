@@ -88,6 +88,11 @@ public class GetBiologyBooks extends AppCompatActivity {
                             //do nothing
                         }
 
+                        if(menuItem.getTitle().equals("Search by Title")) {
+                            Intent intent = new Intent(GetBiologyBooks.this, Search.class);
+                            startActivity(intent);
+                        }
+
                         if(menuItem.getTitle().equals("List a Book for Sale")) {
                             Intent intent = new Intent(GetBiologyBooks.this, CreateListingActivity.class);
                             startActivity(intent);
