@@ -69,7 +69,12 @@ public class CreateListingActivity extends AppCompatActivity {
                     t.show();
 
                 }
+                startActivity(new Intent(CreateListingActivity.this, MyAccount.class));
             }
+
+
+
+
         });
 
         mDrawerLayout = findViewById(R.id.drawer_layout);
