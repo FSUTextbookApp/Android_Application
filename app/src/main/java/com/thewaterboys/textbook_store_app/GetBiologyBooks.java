@@ -106,6 +106,17 @@ public class GetBiologyBooks extends AppCompatActivity {
                         return true;
                     }
                 });
+
+        Button searchAgainBtn = (Button) findViewById(R.id.searchAgain);
+
+        searchAgainBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent (GetBiologyBooks.this, ChooseSubject.class);
+                startActivity(myIntent);
+            }
+        });
+
     }
 
     private void setUpRecyclerView(String subject) {

@@ -110,7 +110,8 @@
             android:text="Welcome, here are your account details:"
             android:textAlignment="center"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/dusty"/>
 
         <Button
             android:id="@+id/toMyAccount"
