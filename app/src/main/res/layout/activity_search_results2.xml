@@ -5,7 +5,8 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:background="@color/paper">
 
     <!-- Layout to contain contents of main body of screen (drawer will slide over this) -->
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -22,14 +23,17 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="14dp"
-            android:text="Search results for:"
+            android:text="Search Results For:"
+            android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="18sp"
+            android:textStyle="bold"
             android:visibility="visible" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="380dp"
-            android:layout_height="494dp"
+            android:layout_height="286dp"
 
             android:layout_centerInParent="true"
             android:visibility="visible" />
@@ -37,12 +41,14 @@
         <TextView
             android:id="@+id/searchText"
             android:layout_width="94dp"
-            android:layout_height="27dp"
-            android:layout_below="@+id/textView121"
+            android:layout_height="59dp"
+            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="46dp"
             android:text="Your @android:string/search_go"
+            android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="18sp"
             android:visibility="visible" />
 
         <Button
