@@ -3,27 +3,27 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_myAccount"
-            android:icon="@drawable/ic_looks_one"
+            android:icon="@drawable/ic_person_black_24dp"
             android:title="My Account" />
         <item
             android:id="@+id/nav_booksBySubject"
-            android:icon="@drawable/ic_looks_one"
+            android:icon="@drawable/ic_library_books_black_24dp"
             android:title="Books by Subject" />
         <item
             android:id="@+id/nav_Search"
-            android:icon="@drawable/ic_looks_one"
+            android:icon="@drawable/ic_poll_black_24dp"
             android:title="Search by Title" />
         <item
             android:id="@+id/nav_newPost"
-            android:icon="@drawable/ic_looks_one"
+            android:icon="@drawable/ic_book_black_24dp"
             android:title="List a Book for Sale" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_looks_one"
+            android:icon="@drawable/ic_people_black_24dp"
             android:title="About Us" />
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_looks_one"
+            android:icon="@drawable/ic_error_outline_black_24dp"
             android:title="Sign Out" />
     </group>
 </menu>
